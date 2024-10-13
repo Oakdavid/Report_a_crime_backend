@@ -1,0 +1,6 @@
+@Report_A_Crime_HostAddress = http://localhost:5211
+
+GET {{Report_A_Crime_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

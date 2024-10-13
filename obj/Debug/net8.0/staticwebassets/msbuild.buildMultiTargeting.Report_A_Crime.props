@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Report_A_Crime.props" />
+</Project>
