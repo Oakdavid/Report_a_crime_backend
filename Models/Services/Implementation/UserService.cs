@@ -78,7 +78,6 @@ namespace Report_A_Crime.Models.Services.Implementation
             return new UserDto
             {
                 Message = "Successful",
-                Status = true,
                 UserId = newUser.UserId,
                 RoleId = newUser.RoleId,
                 UserName = newUser.UserName,
@@ -122,10 +121,11 @@ namespace Report_A_Crime.Models.Services.Implementation
 
         public async Task<UserDto> LogInWithEmailAndPasswordOrNameAsync(LogInWithEmailAndPassword login)
         {
-            var userLogin = await _userRepository.GetUserAsync( u => u.Email == login.EmailOrUserName || u.UserName == login.EmailOrUserName);
+            var userLogin = await _userRepository.GetUserAsync( u => u.Email.ToLower() == login.EmailOrUserName.ToLower() || u.UserName.ToLower() == login.EmailOrUserName.ToLower());
             if(userLogin != null)
             {
                 bool isValidPassword = BCrypt.Net.BCrypt.Verify(login.Password, userLogin.Password);
+
                 if(isValidPassword)
                 { 
                     
@@ -133,12 +133,12 @@ namespace Report_A_Crime.Models.Services.Implementation
                     {
                         UserId = userLogin.UserId,
                         UserName = userLogin.UserName,
-                        Email = login.EmailOrUserName,
+                        Email = userLogin.Email,
                         Message = "login successful",
                         Status = true,
 
                     });
-
+                                
                     return new UserDto
                     {
                         Email = userLogin.Email,
@@ -229,7 +229,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 {
                     Message = "No users found",
                     Status = false,
-                } };
+                }};
             }
 
           

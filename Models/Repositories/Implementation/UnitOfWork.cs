@@ -1,5 +1,4 @@
 ﻿using Report_A_Crime.Context;
-using Report_A_Crime.Migrations;
 using Report_A_Crime.Models.Repositories.Interface;
 
 namespace Report_A_Crime.Models.Repositories.Implementation

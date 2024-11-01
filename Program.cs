@@ -26,10 +26,16 @@ builder.Services.AddSwaggerGen();
 
 //builder.Services.AddScoped<IAuthService, AuthService>();
 //builder.Services.AddScoped<UserManager<IdentityUser>>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IReportRepository, ReportRepository>();
+builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddHttpContextAccessor();
+
+builder.WebHost.UseWebRoot(builder.Configuration["WebRoot"]);       // might remove
+
 
 //builder.Services.AddExceptionHandler(options => options.ExceptionHandler )
 
@@ -58,6 +64,13 @@ builder.Services.AddAuthentication(a =>
     };
 });
 
+
+//builder.Host.ConfigureWebHostDefaults(webBuilder =>
+//{
+//    webBuilder.UseWebRoot(builder.Configuration["Uplaods"]);
+//});
+
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("ClientSide", policyBuilder =>
@@ -78,13 +91,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseStaticFiles();   // might remove
+
 app.UseHttpsRedirection();
 
 app.UseCors("ClientSide");
 
 //app.UseMiddleware<ExceptionHandlerMiddleware>();
 
-app.UseAuthentication();
+app.UseAuthentication(); 
 
 app.UseAuthorization();
 

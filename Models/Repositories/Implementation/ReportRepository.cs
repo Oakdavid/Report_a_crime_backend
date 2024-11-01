@@ -2,6 +2,7 @@
 using Report_A_Crime.Context;
 using Report_A_Crime.Models.Entities;
 using Report_A_Crime.Models.Repositories.Interface;
+using System.Composition;
 using System.Linq.Expressions;
 
 namespace Report_A_Crime.Models.Repositories.Implementation
@@ -15,7 +16,7 @@ namespace Report_A_Crime.Models.Repositories.Implementation
             _dbContext = dbContext;
         }
 
-        public async Task<Report> CreateReport(Report report)
+        public async Task<Report> CreateReportAsync(Report report)
         {
             await _dbContext.Reports.AddAsync(report);
             return report;
@@ -39,6 +40,7 @@ namespace Report_A_Crime.Models.Repositories.Implementation
             return reports;
         }
 
+
         public async Task<Report> GetReportAsync(Expression<Func<Report, bool>> predicate)
         {
             var report = await _dbContext.Reports
@@ -47,15 +49,35 @@ namespace Report_A_Crime.Models.Repositories.Implementation
                 .FirstOrDefaultAsync(predicate);
             return report;
         }
+        public async Task<IEnumerable<Report>> GetRecentReportsByUserAsync(Guid userId, DateTime timeFrame)
+        {
+            return await _dbContext.Reports
+                .Where(r => r.UserId == userId
+                && r.CreatedAt >= timeFrame)
+                .ToListAsync();
+        }
+
+        public async Task<Report> FindSimilarReportAsync(Guid categoryId, Guid userId, string reportDescription, DateTime timeFrame)
+        {
+            var getSimilarReportAsync =  await _dbContext.Reports
+                .Where(r => r.CategoryId == categoryId
+                && r.UserId == userId
+                && r.ReportDescription == reportDescription
+                && r.CreatedAt >= timeFrame)
+                .Include(r => r.User)
+                .Include(r => r.Category)
+                .FirstOrDefaultAsync();
+            return getSimilarReportAsync;
+        }
 
         public async Task<IEnumerable<Report>> SearchReportsAsync(string searchTerm)
         {
             var searchReport = await _dbContext.Reports
                 .Include(r => r.User)
                 .Include(r => r.Category)
-                .Where(r => r.ReportDescription.Contains(searchTerm) ||
-                        r.NameOfTheOffender.Contains(searchTerm) ||         // i might need to recheck this for null reference
-                        r.Location.Contains(searchTerm))
+                .Where(r => r.ReportDescription !=null && r.ReportDescription.Contains(searchTerm.ToLower()) ||
+                        r.NameOfTheOffender != null && r. NameOfTheOffender.Contains(searchTerm.ToLower()) ||
+                        r.Location != null && r.Location.Contains(searchTerm.ToLower()))
                 .ToListAsync();
 
             return searchReport;
@@ -64,6 +86,15 @@ namespace Report_A_Crime.Models.Repositories.Implementation
         public async Task UpdateReportAsync(Report report)
         {
             _dbContext.Reports.Update(report);
+        }
+
+        public async Task<IEnumerable<Report>> GetAllReportsAsync(Expression<Func<Report, bool>> predicate)
+        {
+            var getAllReports = await _dbContext.Reports
+                .Include(r => r.User)
+                .Include(r => r.Category)
+                .Where(predicate).ToListAsync();
+            return getAllReports;
         }
     }
 }

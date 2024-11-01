@@ -71,8 +71,14 @@ namespace Report_A_Crime.Migrations
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uuid");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<DateTime>("DateOccurred")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("DidItHappenInYourPresence")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("HeightOfTheOffender")
                         .HasColumnType("text");
@@ -88,8 +94,8 @@ namespace Report_A_Crime.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("boolean");
+                    b.Property<int>("ReportStatus")
+                        .HasColumnType("integer");
 
                     b.Property<string>("UploadEvidenceUrl")
                         .HasColumnType("text");

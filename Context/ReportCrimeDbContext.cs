@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Report_A_Crime.Models.Entities;
+using Report_A_Crime.Models.Services.Implementation;
 
 namespace Report_A_Crime.Context
 {
@@ -23,6 +24,11 @@ namespace Report_A_Crime.Context
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<RequestAService>().HasKey(r => r.RequestServiceId);
+
+            modelBuilder.Entity<Report>().Property(e => e.CreatedAt).HasConversion(v => v, v => DateTime.SpecifyKind(v,DateTimeKind.Utc));
+
+            modelBuilder.Entity<Report>().Property(e => e.DateOccurred).HasConversion(v => v, v => DateTime.SpecifyKind(v,DateTimeKind.Utc));
+
 
             modelBuilder.Entity<SharedWithUs>().HasKey(s => s.ShareWithUsId);
 
