@@ -26,7 +26,7 @@ namespace Report_A_Crime.Controllers
                 return BadRequest(new
                 {
                     Status = false,
-                    Message = report.Message, // An error occurred while creating the report
+                    Message = report.Message,
                     StatusCode = report.Status // 400
                 });
             }
@@ -35,9 +35,10 @@ namespace Report_A_Crime.Controllers
             {
                 return Ok(new
                 {
-                    Status = true,
-                    StatusCode = 200,
-                    Message = report.Message
+                    //Status = true,
+                    //StatusCode = 200,
+                    //Message = report.Message,
+                    Data = report
                 });
             }
             return BadRequest(new
@@ -46,22 +47,6 @@ namespace Report_A_Crime.Controllers
                 StatusCode = 400,
                 Message = report.Message // failed to create report
             });
-
-            //if (report == null)
-            //{
-            //    return BadRequest(new
-            //    {
-            //        Status = false,
-            //        Message = report.Message,
-            //        StatusCode = report.Status
-            //    });
-            //}
-            //return Ok(new
-            //{
-            //    Satus = true,
-            //    Message = report.Message,
-            //    StatusCode = report.Status
-            //});
         }
     }
 }

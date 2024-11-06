@@ -52,15 +52,15 @@ namespace Report_A_Crime.Controllers
                 });
             }
 
-            if(createUser.Message == "User already exists")
-            {
-                return Conflict(new
-                {
-                    Status = false,
-                    StatusCode = 409,
-                    Message = createUser.Message
-                });
-            }
+            //if(createUser.Message == "User already exists")
+            //{
+            //    return Conflict(new
+            //    {
+            //        Status = false,
+            //        StatusCode = 409,
+            //        Message = createUser.Message
+            //    });
+            //}
 
             return BadRequest(new
             {

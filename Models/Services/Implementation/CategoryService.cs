@@ -14,7 +14,7 @@ namespace Report_A_Crime.Models.Services.Implementation
         private readonly IHttpContextAccessor _contextAccessor;
         private readonly IUnitOfWork _unitOfWork;
 
-        public CategoryService(CategoryRepository categoryRepository, IHttpContextAccessor contextAccessor, IUnitOfWork unitOfWork)
+        public CategoryService(ICategoryRepository categoryRepository, IHttpContextAccessor contextAccessor, IUnitOfWork unitOfWork)
         {
             _categoryRepository = categoryRepository;
             _contextAccessor = contextAccessor;
@@ -43,10 +43,11 @@ namespace Report_A_Crime.Models.Services.Implementation
             return new CategoryDto
             {
                 CategoryId = category.CategoryId,
-                CategoryName = model.CategoryName,
-                CategoryDescription = model.CategoryDescription,
+                CategoryName = category.CategoryName,
+                CategoryDescription = category.CategoryDescription,
                 Reports = category.Reports,
-                Message = "Category created successfully"
+                Message = "Category created successfully",
+                Status = true
             };
         }
 

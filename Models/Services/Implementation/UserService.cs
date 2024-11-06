@@ -55,6 +55,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 };
             }
 
+            
             var role = await _roleRepository.GetRoleAsync(r => r.RoleName == "Admin");
             if(role == null)
             {
@@ -77,7 +78,7 @@ namespace Report_A_Crime.Models.Services.Implementation
 
             return new UserDto
             {
-                Message = "Successful",
+                Message = "User creation Successful",
                 UserId = newUser.UserId,
                 RoleId = newUser.RoleId,
                 UserName = newUser.UserName,
@@ -87,6 +88,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 Reports = newUser.Reports,
                 RequestAServices = newUser.RequestAServices,
                 SharedWithUs = newUser.SharedWithUs,
+                Status = true
             };
         }
 
@@ -108,7 +110,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                     Reports = getUser.Reports,
                     RequestAServices = getUser.RequestAServices,
                     SharedWithUs = getUser.SharedWithUs,
-                    Message = "Found",
+                    Message = "User Found",
                     Status = true,
                 };
             }

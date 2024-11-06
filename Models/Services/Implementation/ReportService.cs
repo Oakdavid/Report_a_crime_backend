@@ -33,8 +33,8 @@ namespace Report_A_Crime.Models.Services.Implementation
         {
             //var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-            var userId = Guid.NewGuid().ToString();
-            if(userId == null)
+            var userId = "6c86df0c-b880-412c-a7da-ad0682ecaddb";
+            if (userId == null)
             {
                 throw new UnauthorizedAccessException("User not authenticated");
             }
@@ -47,8 +47,6 @@ namespace Report_A_Crime.Models.Services.Implementation
                     Data = null,
                     Status = false,
                 };
-                ////throw new ArgumentException("A valid category must be selected.");
-                //reportModel.CategoryId = Guid.Parse("b87c546e-1b45-4112-946d-9d7bbd2b3652");
             }
 
             var categoryExists = await _categoryRepository.CategoryExistAsync( c => c.CategoryId == reportModel.CategoryId );
@@ -76,7 +74,7 @@ namespace Report_A_Crime.Models.Services.Implementation
 
             var newReport = new Report
             {
-
+                //ReportId = reportModel.ReportId,
                 UserId = Guid.Parse(userId),
                 CategoryId = reportModel.CategoryId,
                 DateOccurred = DateTime.SpecifyKind(reportModel.DateOccurred, DateTimeKind.Utc), // jst added
@@ -98,6 +96,10 @@ namespace Report_A_Crime.Models.Services.Implementation
             await _reportRepository.CreateReportAsync(newReport); 
             await _unitOfWork.SaveChangesAsync();
 
+
+            //var createdReport = await _reportRepository.GetReportAsync(r => r.ReportId == newReport.ReportId);
+
+
             return new ReportDto
             {
                 ReportId = newReport.ReportId,
@@ -108,12 +110,30 @@ namespace Report_A_Crime.Models.Services.Implementation
                 DidItHappenInYourPresence = newReport.DidItHappenInYourPresence,
                 ReportDescription = newReport.ReportDescription,
                 UploadEvidenceUrl = newReport.UploadEvidenceUrl,
-               ReportStatus = Enums.ReportStatus.UnderReview,
+                ReportStatus = Enums.ReportStatus.UnderReview,
                 Category = newReport.Category,
                 User = newReport.User,
                 Message = "Report created successfully",
+                Status = true
             };
-            
+
+            //return new ReportDto
+            //{
+            //    ReportId = createdReport.ReportId,
+            //    DateOccurred = createdReport.DateOccurred,
+            //    NameOfTheOffender = createdReport.NameOfTheOffender,
+            //    Location = createdReport.Location,
+            //    HeightOfTheOffender = createdReport.HeightOfTheOffender,
+            //    DidItHappenInYourPresence = createdReport.DidItHappenInYourPresence,
+            //    ReportDescription = createdReport.ReportDescription,
+            //    UploadEvidenceUrl = createdReport.UploadEvidenceUrl,
+            //    ReportStatus = createdReport.ReportStatus,
+            //    Category = createdReport.Category,
+            //    User = createdReport.User,
+            //    Message = "Report created successfully",
+            //    Status = true
+            //};
+
         }
 
         public async Task<ReportDto> DeleteReportAsync(Guid reportId)
@@ -149,7 +169,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                     DidItHappenInYourPresence = r.DidItHappenInYourPresence,
                     ReportDescription = r.ReportDescription,
                     UploadEvidenceUrl = r.UploadEvidenceUrl,
-                    ReportStatus = Enums.ReportStatus.UnderReview, // remove or leave
+                    ReportStatus = Enums.ReportStatus.UnderReview,
                     Category = r.Category,
                     User = r.User,
                     Message = "All report found",
@@ -194,7 +214,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 DidItHappenInYourPresence = r.DidItHappenInYourPresence,
                 ReportDescription = r.ReportDescription,
                 UploadEvidenceUrl = r.UploadEvidenceUrl,
-                ReportStatus = Enums.ReportStatus.UnderReview, // remove or leave
+                ReportStatus = Enums.ReportStatus.UnderReview,
                 Category = r.Category,
                 User = r.User,
                 Message = "All report found",
