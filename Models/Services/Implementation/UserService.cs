@@ -1,7 +1,9 @@
 ﻿//using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using Report_A_Crime.Exception;
 using Report_A_Crime.Models.Dto;
+using Report_A_Crime.Models.Dtos;
 using Report_A_Crime.Models.Entities;
 using Report_A_Crime.Models.Repositories.Interface;
 using Report_A_Crime.Models.Repositories.Interphase;
@@ -20,8 +22,6 @@ namespace Report_A_Crime.Models.Services.Implementation
         private readonly IUnitOfWork _unitOfWork;
         private readonly IRoleRepository _roleRepository;
         private readonly IConfiguration _configuration;
-        //private readonly UserManager<IdentityUser> _userManager;
-        //private readonly IAuthService _authService;
 
         public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork, IRoleRepository roleRepository, IConfiguration configuration)
         {
@@ -85,9 +85,24 @@ namespace Report_A_Crime.Models.Services.Implementation
                 Email = newUser.Email,
                 PhoneNumber = newUser.PhoneNumber,
                 IsAnonymous = newUser.IsAnonymous,
-                Reports = newUser.Reports,
+                Reports = newUser.Reports.Select(r => new ReportDto
+                {
+                    ReportId = r.ReportId,
+                    ReportDescription = r.ReportDescription,
+                    DateOccurred = r.DateOccurred,
+                    CreatedAt = r.CreatedAt,
+                    Location = r.Location,
+                }).ToList(),
                 RequestAServices = newUser.RequestAServices,
                 SharedWithUs = newUser.SharedWithUs,
+                //RequestAServices = newUser.RequestAServices.Select(req => new RequestAServiceDto
+                //{
+                //   
+                //}).ToList(),
+                //SharedWithUs = newUser.SharedWithUs.Select(s => new SharedWithUsDto
+                //{
+
+                //});
                 Status = true
             };
         }
@@ -107,9 +122,25 @@ namespace Report_A_Crime.Models.Services.Implementation
                     Password = getUser.Password,
                     PhoneNumber = getUser.PhoneNumber,
                     IsAnonymous = getUser.IsAnonymous,
-                    Reports = getUser.Reports,
+                    Reports = getUser.Reports.Select(r => new ReportDto
+                    {
+                        ReportId = r.ReportId,
+                        ReportDescription = r.ReportDescription,
+                        DateOccurred = r.DateOccurred,
+                        CreatedAt = r.CreatedAt,
+                        Location = r.Location,
+                    }).ToList(),
                     RequestAServices = getUser.RequestAServices,
                     SharedWithUs = getUser.SharedWithUs,
+
+                    //RequestAServices = getUser.RequestAServices.Select(req => new RequestAServiceDto
+                    //{
+                    //   
+                    //}).ToList(),
+                    //SharedWithUs = getUser.SharedWithUs.Select(s => new SharedWithUsDto
+                    //{
+
+                    //});
                     Message = "User Found",
                     Status = true,
                 };
@@ -123,47 +154,64 @@ namespace Report_A_Crime.Models.Services.Implementation
 
         public async Task<UserDto> LogInWithEmailAndPasswordOrNameAsync(LogInWithEmailAndPassword login)
         {
-            var userLogin = await _userRepository.GetUserAsync( u => u.Email.ToLower() == login.EmailOrUserName.ToLower() || u.UserName.ToLower() == login.EmailOrUserName.ToLower());
-            if(userLogin != null)
+            var userLogin = await _userRepository.GetUserAsync(u => u.Email.ToLower() == login.EmailOrUserName.ToLower() || u.UserName.ToLower() == login.EmailOrUserName.ToLower());
+
+            if (userLogin == null)
             {
-                bool isValidPassword = BCrypt.Net.BCrypt.Verify(login.Password, userLogin.Password);
-
-                if(isValidPassword)
-                { 
-                    
-                    var token = await GenerateTokenAsync(new UserDto
-                    {
-                        UserId = userLogin.UserId,
-                        UserName = userLogin.UserName,
-                        Email = userLogin.Email,
-                        Message = "login successful",
-                        Status = true,
-
-                    });
-                                
-                    return new UserDto
-                    {
-                        Email = userLogin.Email,
-                        UserName = userLogin.UserName,
-                        Token = token,
-                        Message = "Login successful",
-                        Status = true,
-                    };
-                }
                 return new UserDto
                 {
-                    Message = "User name or password incorrect. Enter a valid credentials",
-                    Status = false,
+                    Message = "User not found",
+                    Status = false
                 };
             }
+
+            bool isValidPassword = BCrypt.Net.BCrypt.Verify(login.Password, userLogin.Password);
+
+            if (!isValidPassword)
+            {
+                return new UserDto
+                {
+                    Message = "Username or password is incorrect. Please enter valid credentials.",
+                    Status = false
+                };
+            }
+
+            var role = await _roleRepository.GetRoleAsync(r => r.RoleId == userLogin.RoleId);
+            if (role == null)
+            {
+                return new UserDto
+                {
+                    Message = "Role not found",
+                    Status = false
+                };
+            }
+
+            var token = await GenerateTokenAsync(
+                new UserDto
+                {
+                    UserId = userLogin.UserId,
+                    UserName = userLogin.UserName,
+                    Email = userLogin.Email
+                },
+                new RoleDto
+                {
+                    RoleId = role.RoleId,
+                    RoleName = role.RoleName
+                }
+            );
+
             return new UserDto
             {
-                Message = "User not found",
-                Status = false,
+                Email = userLogin.Email,
+                UserName = userLogin.UserName,
+                Token = token,
+                Message = "Login successful",
+                Status = true
             };
         }
 
-        private async Task<string> GenerateTokenAsync(UserDto user)
+
+        private async Task<string> GenerateTokenAsync(UserDto user, RoleDto role)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes(_configuration["Jwt:key"]);
@@ -177,7 +225,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(ClaimTypes.Email, user.Email),
-               // new Claim(ClaimTypes.Role, role.RoleName)
+                new Claim(ClaimTypes.Role, role.RoleName)
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(20),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),

@@ -34,7 +34,7 @@ namespace Report_A_Crime.Controllers
             {
                 Status = true,
                 Message = "User found",
-                Enail = getUser.Email,  // i might remove this
+                Enail = getUser.Email,  
             });
         }
         
@@ -71,42 +71,42 @@ namespace Report_A_Crime.Controllers
 
         }
 
-      [HttpPost("Login")]
-public async Task<IActionResult> LoginWithEmailAndPassword([FromBody] LogInWithEmailAndPassword login)
-{
-    try
-    {
-        var userLogin = await _userService.LogInWithEmailAndPasswordOrNameAsync(login);
-        if (userLogin.Status)
+        [HttpPost("Login")]
+        public async Task<IActionResult> LoginWithEmailAndPassword([FromBody] LogInWithEmailAndPassword login)
         {
-            return Ok(new
+            try
             {
-                Status = true,
-                StatusCode = 200,
-                Message = userLogin.Message,
-                Token = userLogin.Token
-            });
-        }
-        return StatusCode(500, new
-        {
-            Status = false,
-            Message = userLogin.Message,
-            StatusCode = 500,
-        });
-    }
-    catch (System.Exception ex)
-    {
-         Console.WriteLine("Exception caught: " + ex.Message);    // Temporary logging to console
-         Console.WriteLine("Stack Trace: " + ex.StackTrace);
+                var userLogin = await _userService.LogInWithEmailAndPasswordOrNameAsync(login);
+                if (userLogin.Status)
+                {
+                    return Ok(new
+                    {
+                        Status = true,
+                        StatusCode = 200,
+                        Message = userLogin.Message,
+                        Token = userLogin.Token
+                    });
+                }
+                return StatusCode(500, new
+                {
+                    Status = false,
+                    Message = userLogin.Message,
+                    StatusCode = 500,
+                });
+            }
+            catch (System.Exception ex)
+            {
+                 Console.WriteLine("Exception caught: " + ex.Message);    // Temporary logging to console
+                 Console.WriteLine("Stack Trace: " + ex.StackTrace);
 
-        return StatusCode(500, new
-        {
-            Status = false,
-            Message = "An internal server error occurred. Please try again later",
-            StatusCode = 500
-        });
-    }
-}
+                return StatusCode(500, new
+                {
+                    Status = false,
+                    Message = "An internal server error occurred. Please try again later",
+                    StatusCode = 500
+                });
+            }
+        }
 
 
         [HttpGet("GetAllUsers")]

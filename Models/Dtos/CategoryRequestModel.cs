@@ -8,7 +8,7 @@ namespace Report_A_Crime.Models.Dtos
         public string CategoryName { get; set; } = default!;
         public string? CategoryDescription { get; set; }
         public bool IsDeleted { get; set; } = false;
-        public ICollection<Report> Reports { get; set; } = new HashSet<Report>();
+        public ICollection<ReportDto> Reports { get; set; } = new List<ReportDto>();
     }
 
     public class CategoryRequestModel

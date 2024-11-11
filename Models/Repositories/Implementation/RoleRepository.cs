@@ -38,9 +38,15 @@ namespace Report_A_Crime.Models.Repositories.Implementation
             return role;
         }
 
-        public void Remove(Role role)
+        public void Delete(Role role)
         {
-            _dbContext.Roles .Remove(role);
+            _dbContext.Roles.Remove(role);
+        }
+
+        public async Task<bool> RoleExistAsync(Expression<Func<Role, bool>> predicate)
+        {
+            var exist = await _dbContext.Roles.AnyAsync(predicate);
+            return exist;
         }
     }
 }

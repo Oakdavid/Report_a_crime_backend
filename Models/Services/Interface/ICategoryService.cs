@@ -8,7 +8,7 @@ namespace Report_A_Crime.Models.Services.Interface
         Task<CategoryDto> CreateCategoryAsync(CategoryRequestModel model);
         Task<CategoryDto> GetCategoryByIdAsync(Guid categoryId);
         Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync();
-        Task<CategoryDto> UpdateCategoryAsync(Guid categoryId, Category category);
         Task<bool> DeleteCategoryAsync(Guid categoryId);
+        Task<CategoryDto> UpdateCategoryAsync(Guid categoryId, CategoryUpdateModel category);
     }
 }

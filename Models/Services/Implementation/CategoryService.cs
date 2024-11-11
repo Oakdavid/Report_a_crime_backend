@@ -45,7 +45,15 @@ namespace Report_A_Crime.Models.Services.Implementation
                 CategoryId = category.CategoryId,
                 CategoryName = category.CategoryName,
                 CategoryDescription = category.CategoryDescription,
-                Reports = category.Reports,
+                Reports = category.Reports.Select(report => new ReportDto
+                {
+                    ReportId = report.ReportId,
+                    ReportDescription = report.ReportDescription,
+                    DateOccurred = DateTime.Now,
+                    Location = report.Location,
+                    CreatedAt = DateTime.Now,
+
+                }).ToList(),
                 Message = "Category created successfully",
                 Status = true
             };
@@ -69,19 +77,16 @@ namespace Report_A_Crime.Models.Services.Implementation
             var getAllCategories = await _categoryRepository.GetAllCategoryAsync();
             if(getAllCategories != null && getAllCategories.Any())
             {
-                var categories = getAllCategories.Select(c => new CategoryDto
+                var categories = getAllCategories.Where( c => !c.IsDeleted).Select( c => new CategoryDto
                 {
                     CategoryId = c.CategoryId,
                     CategoryName = c.CategoryName,
                     CategoryDescription = c.CategoryDescription,
+                    Status = true
                 }).ToList();
                 return categories;
             }
-            //return new List<CategoryDto> {new CategoryDto
-            //{
-            //   Message = "No Category found",
-            //   Status = false,
-            //}};
+
             return new List<CategoryDto>();
         }
 
@@ -90,7 +95,7 @@ namespace Report_A_Crime.Models.Services.Implementation
             throw new NotImplementedException();
         }
 
-        public async Task<CategoryDto> UpdateCategoryAsync(Guid categoryId, Category category)
+        public async Task<CategoryDto> UpdateCategoryAsync(Guid categoryId, CategoryUpdateModel category)
         {
             var existingCategory = await _categoryRepository.GetCategoryAsync(c => c.CategoryId == categoryId);
             if(existingCategory == null)
