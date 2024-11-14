@@ -54,20 +54,6 @@ namespace Report_A_Crime.Context
                 KycStatus = true,
             });
 
-            //modelBuilder.Entity<User>()
-            //    .HasMany(u => u.Reports)
-            //    .WithOne(r => r.User)
-            //    .HasForeignKey(r => r.UserId);
-
-            //modelBuilder.Entity<User>()
-            //   .HasMany(u => u.SharedWithUs)
-            //   .WithOne(s => s.User)
-            //   .HasForeignKey(s => s.UserId);
-
-            //modelBuilder.Entity<Role>()
-            //  .HasMany(r => r.Users)
-            //  .WithOne(u => u.Role);
-
         }
     }
 }

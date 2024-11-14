@@ -56,15 +56,31 @@ namespace Report_A_Crime.Models.Services.Implementation
             }
 
             
-            var role = await _roleRepository.GetRoleAsync(r => r.RoleName == "Admin");
-            if(role == null)
+            var adminRole = await _roleRepository.GetRoleAsync(r => r.RoleName == "Admin");
+            var userRole = await _roleRepository.GetRoleAsync(r => r.RoleName == "User");
+
+            if(adminRole == null || userRole == null)
             {
                 throw new ArgumentException("Role 'Admin' not found. Are you missing something?");
             }
+
+            var isAdmin = await _userRepository.GetUserAsync(u => u.Role.RoleName == "Admin");
+
+            Role assignedRole;
+
+            if(isAdmin == null)
+            {
+                assignedRole = adminRole;
+            }
+            else
+            {
+                assignedRole = userRole;
+            }
+
             var newUser = new User
             {
-                Role = role,
-                RoleId = role.RoleId,
+                Role = assignedRole,
+                RoleId = assignedRole.RoleId,
                 UserName = model.UserName,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
