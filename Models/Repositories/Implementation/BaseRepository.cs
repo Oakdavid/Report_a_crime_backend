@@ -3,7 +3,7 @@ using Report_A_Crime.Models.Repositories.Interface;
 
 namespace Report_A_Crime.Models.Repositories.Implementation
 {
-    public class BaseRepository<T> : IBasseRepository<T> where T : class
+    public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         private readonly ReportCrimeDbContext _dbContext;
         public async Task<T> CreateAsync(T entity)

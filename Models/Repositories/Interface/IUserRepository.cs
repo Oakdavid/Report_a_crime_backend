@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace Report_A_Crime.Models.Repositories.Interphase
 {
-    public interface IUserRepository : IBasseRepository<UserRepository>
+    public interface IUserRepository : IBaseRepository<UserRepository>
     {
         public Task<User> CreateUserAsync(User user);
         public Task<User> Update(User user);

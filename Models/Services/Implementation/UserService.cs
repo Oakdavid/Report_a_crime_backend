@@ -1,4 +1,5 @@
 ﻿//using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Report_A_Crime.Exception;
 using Report_A_Crime.Models.Dto;
@@ -54,21 +55,35 @@ namespace Report_A_Crime.Models.Services.Implementation
                     Data = null
                 };
             }
-
             
             var adminRole = await _roleRepository.GetRoleAsync(r => r.RoleName == "Admin");
-            var userRole = await _roleRepository.GetRoleAsync(r => r.RoleName == "User");
 
-            if(adminRole == null || userRole == null)
+            if(adminRole == null)
             {
-                throw new ArgumentException("Role 'Admin' not found. Are you missing something?");
+                adminRole = new Role
+                {
+                    RoleId = Guid.NewGuid(),
+                    RoleName = "Admin"
+                };
+                await _roleRepository.CreateAsync(adminRole);
             }
 
-            var isAdmin = await _userRepository.GetUserAsync(u => u.Role.RoleName == "Admin");
+            var userRole = await _roleRepository.GetRoleAsync(r => r.RoleName == "User");
+
+            if (userRole == null)
+            {
+                userRole = new Role
+                {
+                    RoleId = Guid.NewGuid(),
+                    RoleName = "user"
+                };
+                await _roleRepository.CreateAsync(userRole);
+            }
 
             Role assignedRole;
+            var isAdminExist = await _userRepository.GetUserAsync(u => u.Role.RoleName == "Admin");
 
-            if(isAdmin == null)
+            if(isAdminExist == null)
             {
                 assignedRole = adminRole;
             }

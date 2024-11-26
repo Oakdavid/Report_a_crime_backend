@@ -162,11 +162,6 @@ namespace Report_A_Crime.Migrations
                         {
                             RoleId = new Guid("6b541cc9-b08b-47d3-b52f-3ca6aa06a1e6"),
                             RoleName = "Admin"
-                        },
-                        new
-                        {
-                            RoleId = new Guid("0504ea46-35aa-4949-9c59-b8b32a083ef6"),
-                            RoleName = "User"
                         });
                 });
 
@@ -267,7 +262,7 @@ namespace Report_A_Crime.Migrations
             modelBuilder.Entity("Report_A_Crime.Models.Entities.Report", b =>
                 {
                     b.HasOne("Report_A_Crime.Models.Entities.Category", "Category")
-                        .WithMany()
+                        .WithMany("Reports")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -320,6 +315,11 @@ namespace Report_A_Crime.Migrations
                         .IsRequired();
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("Report_A_Crime.Models.Entities.Category", b =>
+                {
+                    b.Navigation("Reports");
                 });
 
             modelBuilder.Entity("Report_A_Crime.Models.Entities.Role", b =>
