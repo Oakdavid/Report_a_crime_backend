@@ -96,10 +96,6 @@ namespace Report_A_Crime.Models.Services.Implementation
             await _reportRepository.CreateReportAsync(newReport); 
             await _unitOfWork.SaveChangesAsync();
 
-
-            //var createdReport = await _reportRepository.GetReportAsync(r => r.ReportId == newReport.ReportId);
-
-
             return new ReportDto
             {
                 ReportId = newReport.ReportId,

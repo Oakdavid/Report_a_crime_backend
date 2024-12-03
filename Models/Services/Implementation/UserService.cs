@@ -95,14 +95,6 @@ namespace Report_A_Crime.Models.Services.Implementation
                 }).ToList(),
                 RequestAServices = newUser.RequestAServices,
                 SharedWithUs = newUser.SharedWithUs,
-                //RequestAServices = newUser.RequestAServices.Select(req => new RequestAServiceDto
-                //{
-                //   
-                //}).ToList(),
-                //SharedWithUs = newUser.SharedWithUs.Select(s => new SharedWithUsDto
-                //{
-
-                //});
                 Status = true
             };
         }
@@ -132,15 +124,6 @@ namespace Report_A_Crime.Models.Services.Implementation
                     }).ToList(),
                     RequestAServices = getUser.RequestAServices,
                     SharedWithUs = getUser.SharedWithUs,
-
-                    //RequestAServices = getUser.RequestAServices.Select(req => new RequestAServiceDto
-                    //{
-                    //   
-                    //}).ToList(),
-                    //SharedWithUs = getUser.SharedWithUs.Select(s => new SharedWithUsDto
-                    //{
-
-                    //});
                     Message = "User Found",
                     Status = true,
                 };
@@ -320,26 +303,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 Email = user.Email,
                 Message = "Password changed successfully",
             };
-
-
         }
-
-        //public async Task<IdentityResult> ChangePasswordAsync(string email, string currentPassword, string newPassword)
-        //{
-        //    var user = await _userManager.FindByEmailAsync(email);
-        //    if(user == null)
-        //    {
-        //        return IdentityResult.Failed(new IdentityError
-        //        {
-        //            Description = "User not found",
-        //        });
-        //    }
-        //    var result = await _userManager.ChangePasswordAsync(user, currentPassword, newPassword);
-        //    {
-        //        return result;
-        //    }
-        //}
-
         public Task<UserDto> ForgottenPassword(string password, string confirmPassword)
         {
             throw new NotImplementedException();

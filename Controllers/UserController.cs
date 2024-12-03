@@ -2,7 +2,6 @@
 using Report_A_Crime.Models.Dto;
 using Report_A_Crime.Models.Services.Interface;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Report_A_Crime.Controllers
 {
@@ -51,16 +50,6 @@ namespace Report_A_Crime.Controllers
                     Message = createUser.Message,
                 });
             }
-
-            //if(createUser.Message == "User already exists")
-            //{
-            //    return Conflict(new
-            //    {
-            //        Status = false,
-            //        StatusCode = 409,
-            //        Message = createUser.Message
-            //    });
-            //}
 
             return BadRequest(new
             {
