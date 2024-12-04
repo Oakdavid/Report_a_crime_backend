@@ -8,6 +8,8 @@ namespace Report_A_Crime.Models.Repositories.Interface
         public Task<Role> CreateAsync(Role role);
         public Task<IEnumerable<Role>> GetAllRolesAsync();
         public Task<Role> GetRoleAsync(Expression<Func<Role, bool>> expression);
-        public void Remove(Role role);
+        public void Delete(Role role);
+        public Task<bool> RoleExistAsync(Expression<Func<Role, bool>> predicate);
+
     }
 }

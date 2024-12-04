@@ -2,7 +2,6 @@
 using Report_A_Crime.Models.Dto;
 using Report_A_Crime.Models.Services.Interface;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Report_A_Crime.Controllers
 {
@@ -34,7 +33,7 @@ namespace Report_A_Crime.Controllers
             {
                 Status = true,
                 Message = "User found",
-                Enail = getUser.Email,  // i might remove this
+                Enail = getUser.Email,  
             });
         }
         

@@ -35,9 +35,6 @@ namespace Report_A_Crime.Controllers
             {
                 return Ok(new
                 {
-                    //Status = true,
-                    //StatusCode = 200,
-                    //Message = report.Message,
                     Data = report
                 });
             }
@@ -45,7 +42,7 @@ namespace Report_A_Crime.Controllers
             {
                 Status = false,
                 StatusCode = 400,
-                Message = report.Message // failed to create report
+                Message = report.Message
             });
         }
     }

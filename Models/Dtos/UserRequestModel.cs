@@ -18,7 +18,7 @@ namespace Report_A_Crime.Models.Dto
         public string? PhoneNumber { get; set; } 
         public bool? IsAnonymous { get; set; }
         public string? Token { get; set; }
-        public ICollection<Report> Reports { get; set; } = new HashSet<Report>();
+        public ICollection<ReportDto> Reports { get; set; } = new List<ReportDto>();
         public ICollection<SharedWithUs> SharedWithUs { get; set; } = new HashSet<SharedWithUs>();
         public ICollection<RequestAService> RequestAServices { get; set; } = new HashSet<RequestAService>();
     }
