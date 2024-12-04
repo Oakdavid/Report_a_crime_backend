@@ -8,11 +8,7 @@ namespace Report_A_Crime.Models.Repositories.Interface
         Task<Geolocation> CreateAsync(Geolocation geolocation);
         Task<Geolocation> Update(Geolocation geolocation);
         Task<Geolocation> Delete(Expression<Func<Geolocation, bool>> expression);
-        
         Task<Geolocation> GetGeolocationAsync(Expression<Func<Geolocation, bool>> expression);
         Task<IEnumerable<Geolocation>> GetAllAsync();
-
-
-
     }
 }
