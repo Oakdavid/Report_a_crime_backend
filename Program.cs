@@ -34,10 +34,14 @@ builder.Services.AddScoped<IReportService, ReportService>();
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IGeolocationRepository, GeolocationRepository>();
+builder.Services.AddScoped<IGeolocationService, GeolocationService>();
+
 
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpClient();
 
 builder.WebHost.UseWebRoot(builder.Configuration["WebRoot"]);       // might remove
 

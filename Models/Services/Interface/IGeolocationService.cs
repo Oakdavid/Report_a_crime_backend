@@ -6,9 +6,8 @@ namespace Report_A_Crime.Models.Services.Interface
 {
     public interface IGeolocationService
     {
-        Task<bool> GeolocationExistsAsync(Expression<Func<Geolocation, bool>> predicate);
+        Task<GeolocationDto> CreateGeolocationAsync(GeolocationRequestModel requestModel, Guid reportId);
         Task<IEnumerable<GeolocationDto>> GetGeolocations(Expression<Func<Geolocation, bool>> predicate);
-        Task<IEnumerable<GeolocationDto>> GetAllFilteredLocations(Expression<Func<Geolocation, bool>> predicate);
         Task<IEnumerable<GeolocationDto>> GetAllGeolocations();
         Task <GeolocationDto> UpdateGeolocationAsync(GeolocationDto geolocation);
 

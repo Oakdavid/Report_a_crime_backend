@@ -7,9 +7,11 @@ namespace Report_A_Crime.Models.Repositories.Interface
     {
         Task<Geolocation> CreateAsync(Geolocation geolocation);
         Task<bool> ExistAsync (Expression<Func<Geolocation, bool>> predicate);
-        Task<Geolocation> Update(Geolocation geolocation);
-        Task<Geolocation> Delete(Guid geolocationId);
+        Task<Geolocation> UpdateAsync(Geolocation geolocation);
+        Task<Geolocation> DeleteAsync(Guid geolocationId);
         Task<Geolocation> GetGeolocationAsync(Expression<Func<Geolocation, bool>> expression);
+        Task<IEnumerable<Geolocation>> GetByReportIdAsync(Guid reportId);
+
         Task<IEnumerable<Geolocation>> GetAllAsync();
     }
 }

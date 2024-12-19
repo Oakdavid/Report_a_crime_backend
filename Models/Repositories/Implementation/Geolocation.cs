@@ -21,7 +21,7 @@ namespace Report_A_Crime.Models.Repositories.Implementation
             return geolocation;
         }
 
-        public async Task<Geolocation> Delete(Guid geolocationId)
+        public async Task<Geolocation> DeleteAsync(Guid geolocationId)
         {
            var geolocation = await _dbContext.Geolocations.FindAsync(geolocationId);
             _dbContext.Geolocations.Remove(geolocation);
@@ -43,6 +43,15 @@ namespace Report_A_Crime.Models.Repositories.Implementation
             return allGeolocation;
         }
 
+        public async Task<IEnumerable<Geolocation>> GetByReportIdAsync(Guid reportId)
+        {
+            var geolocation = await _dbContext.Geolocations
+                .Include(g => g.Reports)
+                .Where(g => g.ReportId == reportId)
+                .ToListAsync();
+            return geolocation;
+        }
+
         public async Task<Geolocation> GetGeolocationAsync(Expression<Func<Geolocation, bool>> expression)
         {
             var geolocation = await _dbContext.Geolocations
@@ -51,7 +60,7 @@ namespace Report_A_Crime.Models.Repositories.Implementation
             return geolocation;
         }
 
-        public async Task<Geolocation> Update(Geolocation geolocation)
+        public async Task<Geolocation> UpdateAsync(Geolocation geolocation)
         {
             _dbContext.Geolocations.Update(geolocation);
             return geolocation;
