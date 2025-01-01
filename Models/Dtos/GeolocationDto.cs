@@ -8,6 +8,7 @@ namespace Report_A_Crime.Models.Dtos
         public string? IpAddress { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+        public string? City { get; set; }
         public Guid ReportId { get; set; }
     }
 
@@ -17,5 +18,6 @@ namespace Report_A_Crime.Models.Dtos
         //public Guid ReportId { get; set; }
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
+        public string? City { get; set; }
     }
 }

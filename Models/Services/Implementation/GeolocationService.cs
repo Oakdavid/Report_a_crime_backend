@@ -1,4 +1,6 @@
-﻿using Report_A_Crime.Models.Dtos;
+﻿using Microsoft.AspNetCore.Identity.Data;
+using Newtonsoft.Json;
+using Report_A_Crime.Models.Dtos;
 using Report_A_Crime.Models.Entities;
 using Report_A_Crime.Models.Repositories.Interface;
 using Report_A_Crime.Models.Services.Interface;
@@ -13,26 +15,54 @@ namespace Report_A_Crime.Models.Services.Implementation
         private readonly IReportRepository _reportRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly HttpClient _httpClient;
-        private readonly string _ipinfoToken = "751c3e154c2d6d";
+        private readonly string _ipInfoToken;
 
-        public GeolocationService(IGeolocationRepository geolocationRepository, ILogger logger, IReportRepository reportRepository, IUnitOfWork unitOfWork, HttpClient httpClient, string ipinfoToken)
+        public GeolocationService(IGeolocationRepository geolocationRepository, ILogger logger, IReportRepository reportRepository, IUnitOfWork unitOfWork, HttpClient httpClient, IConfiguration configuration)
         {
             _geolocationRepository = geolocationRepository;
             _logger = logger;
             _reportRepository = reportRepository;
             _unitOfWork = unitOfWork;
             _httpClient = httpClient;
-            _ipinfoToken = ipinfoToken;
+            _ipInfoToken = configuration["IpInfo:Token"] ?? throw new ArgumentNullException("IpInfo token is not configured.");
         }
 
         public async Task<GeolocationDto> CreateGeolocationAsync(GeolocationRequestModel requestModel, Guid reportId)
         {
+            if(!requestModel.Latitude.HasValue || !requestModel.Longitude.HasValue)
+            {
+                var ipInfoResponse = await _httpClient.GetAsync($"https://ipinfo.io/json?token={_ipInfoToken}");
+                if(!ipInfoResponse.IsSuccessStatusCode)
+                {
+                    return new GeolocationDto
+                    {
+                        Message = "Unable to retrieve location information",
+                        Status = false,
+                    };
+                }
+
+                var ipInfoContent = await ipInfoResponse.Content.ReadAsStringAsync();
+                var ipInfoData = JsonConvert.DeserializeObject<Geolocation>(ipInfoContent);
+                if (ipInfoData == null || ipInfoData.Latitude == 0 || ipInfoData.Longitude == 0)
+                {
+                    return new GeolocationDto
+                    {
+                        Message = "No geolocation data available for this request.",
+                        Status = false,
+                    };
+                }
+
+                requestModel.Latitude = ipInfoData.Latitude;
+                requestModel.Longitude = ipInfoData.Longitude;
+                requestModel.City = ipInfoData.City;
+            }
+
             var geolocationExist = await _geolocationRepository.ExistAsync( g => g.Latitude == requestModel.Latitude && g.Longitude == requestModel.Longitude);
             if(geolocationExist)
             {
                 return new GeolocationDto
                 {
-                    Message = " longitude or latitude exist",
+                    Message = "The specified latitude and longitude already exist.",
                     Status = false,
                     Latitude = requestModel.Latitude.GetValueOrDefault(),
                     Longitude = requestModel.Longitude.GetValueOrDefault(),
@@ -43,6 +73,7 @@ namespace Report_A_Crime.Models.Services.Implementation
             {
                 Latitude = requestModel.Latitude.GetValueOrDefault(),
                 Longitude = requestModel.Longitude.GetValueOrDefault(),
+                City = requestModel.City,
                 ReportId = reportId
             };
             await _geolocationRepository.CreateAsync(geolocation);
@@ -53,6 +84,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 GeolocationId = geolocation.GeolocationId,
                 Latitude = geolocation.Latitude,
                 Longitude = geolocation.Longitude,
+                City = geolocation.City,
                 ReportId = geolocation.ReportId,
                 Status = true,
                 Message = "Geolocation created successfully."
