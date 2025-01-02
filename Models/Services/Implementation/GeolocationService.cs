@@ -11,16 +11,16 @@ namespace Report_A_Crime.Models.Services.Implementation
     public class GeolocationService : IGeolocationService
     {
         private readonly IGeolocationRepository _geolocationRepository;
-        private readonly ILogger _logger;
+        //private readonly ILogger _logger;
         private readonly IReportRepository _reportRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly HttpClient _httpClient;
         private readonly string _ipInfoToken;
 
-        public GeolocationService(IGeolocationRepository geolocationRepository, ILogger logger, IReportRepository reportRepository, IUnitOfWork unitOfWork, HttpClient httpClient, IConfiguration configuration)
+        public GeolocationService(IGeolocationRepository geolocationRepository, IReportRepository reportRepository, IUnitOfWork unitOfWork, HttpClient httpClient, IConfiguration configuration)
         {
             _geolocationRepository = geolocationRepository;
-            _logger = logger;
+            //_logger = logger;
             _reportRepository = reportRepository;
             _unitOfWork = unitOfWork;
             _httpClient = httpClient;

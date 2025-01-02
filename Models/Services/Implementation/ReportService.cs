@@ -15,8 +15,10 @@ namespace Report_A_Crime.Models.Services.Implementation
         private readonly IUnitOfWork _unitOfWork;
         private readonly IUserRepository _userRepository;
         private readonly ICategoryRepository _categoryRepository;
+        private readonly IGeolocationRepository _geolocationRepository;
         private readonly IHttpContextAccessor _contextAccessor;
         private readonly IWebHostEnvironment _environment;
+        private readonly IGeolocationService _geolocationService;
 
 
         public ReportService(IReportRepository reportRepository, IUnitOfWork unitOfWork, IUserRepository userRepository, ICategoryRepository categoryRepository, IHttpContextAccessor contextAccessor, IWebHostEnvironment environment)
@@ -33,7 +35,8 @@ namespace Report_A_Crime.Models.Services.Implementation
         {
             //var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-            var userId = "6c86df0c-b880-412c-a7da-ad0682ecaddb";
+           // var userId = "6c86df0c-b880-412c-a7da-ad0682ecaddb";
+            var userId = "494e14be-e8e2-4c39-ada9-329f283d2e2e";
             if (userId == null)
             {
                 throw new UnauthorizedAccessException("User not authenticated");
@@ -72,6 +75,16 @@ namespace Report_A_Crime.Models.Services.Implementation
                 };
             }
 
+            var geolocation = await _geolocationService.CreateGeolocationAsync(new GeolocationRequestModel(), Guid.NewGuid());
+            if(!geolocation.Status)
+            {
+                return new ReportDto
+                {
+                    Message = geolocation.Message,
+                    Status = false
+                };
+            }
+
             var newReport = new Report
             {
                 //ReportId = reportModel.ReportId,
@@ -80,7 +93,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 DateOccurred = DateTime.SpecifyKind(reportModel.DateOccurred, DateTimeKind.Utc), // jst added
                 CreatedAt = DateTime.UtcNow,
                 NameOfTheOffender = reportModel.NameOfTheOffender,
-                Location = reportModel.Location,
+                Location = geolocation.Data, // this should contain the city, lat and long
                 HeightOfTheOffender = reportModel.HeightOfTheOffender,
                 DidItHappenInYourPresence = reportModel.DidItHappenInYourPresence,
                 ReportDescription = reportModel.ReportDescription,
@@ -112,23 +125,6 @@ namespace Report_A_Crime.Models.Services.Implementation
                 Message = "Report created successfully",
                 Status = true
             };
-
-            //return new ReportDto
-            //{
-            //    ReportId = createdReport.ReportId,
-            //    DateOccurred = createdReport.DateOccurred,
-            //    NameOfTheOffender = createdReport.NameOfTheOffender,
-            //    Location = createdReport.Location,
-            //    HeightOfTheOffender = createdReport.HeightOfTheOffender,
-            //    DidItHappenInYourPresence = createdReport.DidItHappenInYourPresence,
-            //    ReportDescription = createdReport.ReportDescription,
-            //    UploadEvidenceUrl = createdReport.UploadEvidenceUrl,
-            //    ReportStatus = createdReport.ReportStatus,
-            //    Category = createdReport.Category,
-            //    User = createdReport.User,
-            //    Message = "Report created successfully",
-            //    Status = true
-            //};
 
         }
 
