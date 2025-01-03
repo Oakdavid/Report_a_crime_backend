@@ -76,6 +76,14 @@ namespace Report_A_Crime.Models.Services.Implementation
             }
 
             var geolocation = await _geolocationService.CreateGeolocationAsync(new GeolocationRequestModel(), Guid.NewGuid());
+            if(geolocation == null)
+            {
+                return new ReportDto
+                {
+                    Message = "Geolocation service returned null",
+                    Status = false
+                };
+            }
             if(!geolocation.Status)
             {
                 return new ReportDto

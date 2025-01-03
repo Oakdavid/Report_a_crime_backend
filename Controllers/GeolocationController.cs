@@ -17,7 +17,7 @@ namespace Report_A_Crime.Controllers
             _geolocationService = geolocationService;
         }
 
-        [HttpPost("Geolocation")]
+        [HttpPost("Create Geolocation")]
         public async Task<IActionResult> Geolocation([FromForm] GeolocationRequestModel requestModel, [FromQuery] Guid reportId)
         {
             if(requestModel == null || reportId == Guid.Empty)

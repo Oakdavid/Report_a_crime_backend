@@ -43,6 +43,8 @@ namespace Report_A_Crime.Models.Services.Implementation
 
                 var ipInfoContent = await ipInfoResponse.Content.ReadAsStringAsync();
                 var ipInfoData = JsonConvert.DeserializeObject<Geolocation>(ipInfoContent);
+
+
                 if (ipInfoData == null || ipInfoData.Latitude == 0 || ipInfoData.Longitude == 0)
                 {
                     return new GeolocationDto
