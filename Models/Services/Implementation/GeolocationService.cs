@@ -42,10 +42,10 @@ namespace Report_A_Crime.Models.Services.Implementation
                 }
 
                 var ipInfoContent = await ipInfoResponse.Content.ReadAsStringAsync();
-                var ipInfoData = JsonConvert.DeserializeObject<Geolocation>(ipInfoContent);
+                var ipInfoData = JsonConvert.DeserializeObject<dynamic>(ipInfoContent);
 
 
-                if (ipInfoData == null || ipInfoData.Latitude == 0 || ipInfoData.Longitude == 0)
+                if (ipInfoData == null || ipInfoData.city == null || ipInfoData.country == null)
                 {
                     return new GeolocationDto
                     {
@@ -54,9 +54,29 @@ namespace Report_A_Crime.Models.Services.Implementation
                     };
                 }
 
-                requestModel.Latitude = ipInfoData.Latitude;
-                requestModel.Longitude = ipInfoData.Longitude;
-                requestModel.City = ipInfoData.City;
+                var locParts = ((string)ipInfoData.loc)?.Split(',');
+
+                if (locParts?.Length != 2 || !double.TryParse(locParts[0], out double lat) || !double.TryParse(locParts[1], out double lng))
+                {
+                    return new GeolocationDto
+                    {
+                        Message = "Invalid geolocation data from the external API.",
+                        Status = false,
+                    };
+                }
+
+                requestModel.Latitude = lat;
+                requestModel.Longitude = lng;
+                requestModel.City = ipInfoData.city;
+            }
+
+            if (requestModel.Latitude <= -90 || requestModel.Latitude >= 90 || requestModel.Longitude <= -180 || requestModel.Longitude >= 180)
+            {
+                return new GeolocationDto
+                {
+                    Message = "Invalid latitude or longitude values.",
+                    Status = false,
+                };
             }
 
             var geolocationExist = await _geolocationRepository.ExistAsync( g => g.Latitude == requestModel.Latitude && g.Longitude == requestModel.Longitude);

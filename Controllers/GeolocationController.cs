@@ -50,7 +50,7 @@ namespace Report_A_Crime.Controllers
             {
                 return StatusCode(500, new 
                 { 
-                    Message = "An error occurred while creating geolocation.", 
+                    Message = "An error occurred while creating geolocation.",
                     Error = ex.Message 
                 });
             }
