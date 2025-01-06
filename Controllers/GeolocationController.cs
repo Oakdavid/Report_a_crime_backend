@@ -37,12 +37,13 @@ namespace Report_A_Crime.Controllers
                     {
                         Message = geolocation.Message,
                         Status = geolocation.Status,
-                        StatusCode = geolocation.Status
                     });
                 }
                 return Ok(new
                 {
-                    Data = geolocation.Data,
+                    Data = geolocation,
+                    Status = true,
+                    Message = geolocation.Message
                 });
             }
 
