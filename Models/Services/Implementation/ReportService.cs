@@ -98,10 +98,10 @@ namespace Report_A_Crime.Models.Services.Implementation
                 //ReportId = reportModel.ReportId,
                 UserId = Guid.Parse(userId),
                 CategoryId = reportModel.CategoryId,
-                DateOccurred = DateTime.SpecifyKind(reportModel.DateOccurred, DateTimeKind.Utc), // jst added
+                DateOccurred = DateTime.SpecifyKind(reportModel.DateOccurred, DateTimeKind.Utc),
                 CreatedAt = DateTime.UtcNow,
                 NameOfTheOffender = reportModel.NameOfTheOffender,
-                Location = geolocation.Data, // this should contain the city, lat and long
+                Location = geolocation.Data,
                 HeightOfTheOffender = reportModel.HeightOfTheOffender,
                 DidItHappenInYourPresence = reportModel.DidItHappenInYourPresence,
                 ReportDescription = reportModel.ReportDescription,

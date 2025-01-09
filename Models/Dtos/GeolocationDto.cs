@@ -6,8 +6,8 @@ namespace Report_A_Crime.Models.Dtos
     {
         public Guid GeolocationId { get; set; }
         public string? IpAddress { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+        public double? Latitude { get; set; }
+        public double? Longitude { get; set; }
         public string? City { get; set; }
         public Guid ReportId { get; set; }
     }

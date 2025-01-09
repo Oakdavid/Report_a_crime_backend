@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Report_A_Crime")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5da32c85627f36cbc9db22b4e8a725f88565492b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+129aa107c583fb05e02d31c0c52c667afb9aa12c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Report_A_Crime")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Report_A_Crime")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

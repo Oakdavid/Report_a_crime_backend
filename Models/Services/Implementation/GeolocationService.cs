@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.Data;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.Data;
 using Newtonsoft.Json;
 using Report_A_Crime.Models.Dtos;
 using Report_A_Crime.Models.Entities;
@@ -11,25 +12,27 @@ namespace Report_A_Crime.Models.Services.Implementation
     public class GeolocationService : IGeolocationService
     {
         private readonly IGeolocationRepository _geolocationRepository;
-        //private readonly ILogger _logger;
         private readonly IReportRepository _reportRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly HttpClient _httpClient;
+        private readonly HttpContextAccessor _httpContextAccessor;
         private readonly string _ipInfoToken;
 
-        public GeolocationService(IGeolocationRepository geolocationRepository, IReportRepository reportRepository, IUnitOfWork unitOfWork, HttpClient httpClient, IConfiguration configuration)
+        public GeolocationService(IGeolocationRepository geolocationRepository, IReportRepository reportRepository, IUnitOfWork unitOfWork, HttpClient httpClient, HttpContextAccessor httpContextAccessor, IConfiguration configuration)
         {
             _geolocationRepository = geolocationRepository;
-            //_logger = logger;
             _reportRepository = reportRepository;
             _unitOfWork = unitOfWork;
             _httpClient = httpClient;
+            _httpContextAccessor = httpContextAccessor;
             _ipInfoToken = configuration["IpInfo:Token"] ?? throw new ArgumentNullException("IpInfo token is not configured.");
         }
 
         public async Task<GeolocationDto> CreateGeolocationAsync(GeolocationRequestModel requestModel, Guid reportId)
         {
-            if(!requestModel.Latitude.HasValue || !requestModel.Longitude.HasValue)
+            var clientIp = _httpContextAccessor.HttpContext?.Connection?.RemoteIpAddress?.ToString();
+
+            if (!requestModel.Latitude.HasValue || !requestModel.Longitude.HasValue)
             {
                 var ipInfoResponse = await _httpClient.GetAsync($"https://ipinfo.io/json?token={_ipInfoToken}");
                 if(!ipInfoResponse.IsSuccessStatusCode)
@@ -96,6 +99,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 Latitude = requestModel.Latitude.GetValueOrDefault(),
                 Longitude = requestModel.Longitude.GetValueOrDefault(),
                 City = requestModel.City,
+                IpAddress = clientIp,
                 ReportId = reportId
             };
             await _geolocationRepository.CreateAsync(geolocation);
@@ -108,6 +112,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 Longitude = geolocation.Longitude,
                 City = geolocation.City,
                 ReportId = geolocation.ReportId,
+                IpAddress = geolocation.IpAddress,
                 Status = true,
                 Message = "Geolocation created successfully."
             };
