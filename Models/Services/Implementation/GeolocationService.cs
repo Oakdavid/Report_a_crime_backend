@@ -15,10 +15,10 @@ namespace Report_A_Crime.Models.Services.Implementation
         private readonly IReportRepository _reportRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly HttpClient _httpClient;
-        private readonly HttpContextAccessor _httpContextAccessor;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly string _ipInfoToken;
 
-        public GeolocationService(IGeolocationRepository geolocationRepository, IReportRepository reportRepository, IUnitOfWork unitOfWork, HttpClient httpClient, HttpContextAccessor httpContextAccessor, IConfiguration configuration)
+        public GeolocationService(IGeolocationRepository geolocationRepository, IReportRepository reportRepository, IUnitOfWork unitOfWork, HttpClient httpClient, IHttpContextAccessor httpContextAccessor, IConfiguration configuration)
         {
             _geolocationRepository = geolocationRepository;
             _reportRepository = reportRepository;
@@ -30,6 +30,14 @@ namespace Report_A_Crime.Models.Services.Implementation
 
         public async Task<GeolocationDto> CreateGeolocationAsync(GeolocationRequestModel requestModel, Guid reportId)
         {
+            if(requestModel == null)
+            {
+                return new GeolocationDto
+                {
+                    Status = false,
+                    Message = "Invalid request model"
+                };
+            }
             var clientIp = _httpContextAccessor.HttpContext?.Connection?.RemoteIpAddress?.ToString();
 
             if (!requestModel.Latitude.HasValue || !requestModel.Longitude.HasValue)

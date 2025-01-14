@@ -31,19 +31,14 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IReportRepository, ReportRepository>();
 builder.Services.AddScoped<IReportService, ReportService>();
-
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IGeolocationRepository, GeolocationRepository>();
 builder.Services.AddScoped<IGeolocationService, GeolocationService>();
-
-
-
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
-
-builder.WebHost.UseWebRoot(builder.Configuration["WebRoot"]);       // might remove
+builder.WebHost.UseWebRoot(builder.Configuration["WebRoot"]);
 
 
 //builder.Services.AddExceptionHandler(options => options.ExceptionHandler )
