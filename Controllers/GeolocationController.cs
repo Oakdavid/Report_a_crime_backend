@@ -41,7 +41,6 @@ namespace Report_A_Crime.Controllers
                 }
                 return Ok(new
                 {
-                    Data = geolocation,
                     Status = true,
                     Message = geolocation.Message
                 });
