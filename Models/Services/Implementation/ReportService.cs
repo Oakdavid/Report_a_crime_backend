@@ -101,7 +101,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 DateOccurred = DateTime.SpecifyKind(reportModel.DateOccurred, DateTimeKind.Utc),
                 CreatedAt = DateTime.UtcNow,
                 NameOfTheOffender = reportModel.NameOfTheOffender,
-                Location = geolocation.Data,
+                Location = geolocation.City,
                 HeightOfTheOffender = reportModel.HeightOfTheOffender,
                 DidItHappenInYourPresence = reportModel.DidItHappenInYourPresence,
                 ReportDescription = reportModel.ReportDescription,
