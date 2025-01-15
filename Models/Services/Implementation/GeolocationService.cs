@@ -122,7 +122,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 ReportId = geolocation.ReportId,
                 IpAddress = geolocation.IpAddress,
                 Status = true,
-                Message = "Geolocation created successfully."
+                Message = "Geolocation created successfully.",
             };
         }
 
