@@ -30,7 +30,7 @@ namespace Report_A_Crime.Models.Services.Implementation
 
         public async Task<GeolocationDto> CreateGeolocationAsync(GeolocationRequestModel requestModel, Guid reportId)
         {
-            if(requestModel == null)
+            if (requestModel == null)
             {
                 return new GeolocationDto
                 {
@@ -43,7 +43,7 @@ namespace Report_A_Crime.Models.Services.Implementation
             if (!requestModel.Latitude.HasValue || !requestModel.Longitude.HasValue)
             {
                 var ipInfoResponse = await _httpClient.GetAsync($"https://ipinfo.io/json?token={_ipInfoToken}");
-                if(!ipInfoResponse.IsSuccessStatusCode)
+                if (!ipInfoResponse.IsSuccessStatusCode)
                 {
                     return new GeolocationDto
                     {
@@ -90,8 +90,8 @@ namespace Report_A_Crime.Models.Services.Implementation
                 };
             }
 
-            var geolocationExist = await _geolocationRepository.ExistAsync( g => g.Latitude == requestModel.Latitude && g.Longitude == requestModel.Longitude);
-            if(geolocationExist)
+            var geolocationExist = await _geolocationRepository.ExistAsync(g => g.Latitude == requestModel.Latitude && g.Longitude == requestModel.Longitude);
+            if (geolocationExist)
             {
                 return new GeolocationDto
                 {
@@ -126,9 +126,31 @@ namespace Report_A_Crime.Models.Services.Implementation
             };
         }
 
-        public Task<IEnumerable<GeolocationDto>> GetAllGeolocations()
+        public async Task<IEnumerable<GeolocationDto>> GetAllGeolocations()
         {
-            throw new NotImplementedException();
+            var location = await _geolocationRepository.GetAllAsync();
+            if (location == null || !location.Any())
+            {
+                return new List<GeolocationDto>
+               {
+                   new GeolocationDto
+                   {
+                       Message = "No geolocation found",
+                       Status = false,
+                   }
+               };
+            }
+
+            var allGeolocation = location.Select(g => new GeolocationDto
+            {
+                GeolocationId = g.GeolocationId,
+                Latitude = g.Latitude,
+                Longitude = g.Longitude,
+                Message = "Geolocation retrieved successfully",
+                Status = true
+            }).ToList();
+
+            return allGeolocation;
         }
 
         public Task<IEnumerable<GeolocationDto>> GetGeolocations(Expression<Func<Geolocation, bool>> predicate)
