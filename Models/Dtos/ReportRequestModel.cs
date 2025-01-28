@@ -13,6 +13,7 @@ namespace Report_A_Crime.Models.Dtos
 
         public string? NameOfTheOffender { get; set; }
         public string Location { get; set; } = default!;
+        public string? Address { get; set; }
         public string? HeightOfTheOffender { get; set; }
         public bool DidItHappenInYourPresence { get; set; }
         public string ReportDescription { get; set; } = default!;
@@ -34,10 +35,11 @@ namespace Report_A_Crime.Models.Dtos
         public DateTime DateOccurred { get; set; } = DateTime.UtcNow;
         public string? NameOfTheOffender { get; set; }
         public string Location { get; set; } = default!;
+        public string? Address { get; set; }
         public string? HeightOfTheOffender { get; set; }
         public bool DidItHappenInYourPresence { get; set; }
         public string ReportDescription { get; set; } = default!;
-        [NotMapped]
+        //[NotMapped]
         public IFormFile? UploadEvidence { get; set; }
         //public string? UploadEvidenceUrl { get; set; }
 

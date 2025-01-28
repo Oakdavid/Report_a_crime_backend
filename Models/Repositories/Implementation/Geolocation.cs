@@ -43,6 +43,14 @@ namespace Report_A_Crime.Models.Repositories.Implementation
             return allGeolocation;
         }
 
+        public async Task<IEnumerable<Geolocation>> GetAllByFilterAsync(Expression<Func<Geolocation, bool>> expression)
+        {
+            var getAllFilterLocation = await _dbContext.Geolocations
+                .Include(g => g.Reports)
+                .ToListAsync();
+            return getAllFilterLocation;
+        }
+
         public async Task<IEnumerable<Geolocation>> GetByReportIdAsync(Guid reportId)
         {
             var geolocation = await _dbContext.Geolocations

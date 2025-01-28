@@ -5,6 +5,7 @@ using Report_A_Crime.Models.Entities;
 using Report_A_Crime.Models.Repositories.Interface;
 using Report_A_Crime.Models.Repositories.Interphase;
 using Report_A_Crime.Models.Services.Interface;
+using System.Drawing;
 using System.Security.Claims;
 
 namespace Report_A_Crime.Models.Services.Implementation
@@ -21,7 +22,7 @@ namespace Report_A_Crime.Models.Services.Implementation
         private readonly IGeolocationService _geolocationService;
 
 
-        public ReportService(IReportRepository reportRepository, IUnitOfWork unitOfWork, IUserRepository userRepository, ICategoryRepository categoryRepository, IHttpContextAccessor contextAccessor, IWebHostEnvironment environment)
+        public ReportService(IReportRepository reportRepository, IUnitOfWork unitOfWork, IUserRepository userRepository, ICategoryRepository categoryRepository, IHttpContextAccessor contextAccessor, IWebHostEnvironment environment, IGeolocationRepository geolocationRepository)
         {
             _reportRepository = reportRepository;
             _unitOfWork = unitOfWork;
@@ -29,6 +30,7 @@ namespace Report_A_Crime.Models.Services.Implementation
            _categoryRepository = categoryRepository;
             _contextAccessor = contextAccessor;
             _environment = environment;
+            _geolocationRepository = geolocationRepository;
         }
 
         public async Task<ReportDto> CreateReportAsync(ReportRequestModel reportModel)
@@ -75,23 +77,6 @@ namespace Report_A_Crime.Models.Services.Implementation
                 };
             }
 
-            var geolocation = await _geolocationService.CreateGeolocationAsync(new GeolocationRequestModel(), Guid.NewGuid());
-            if(geolocation == null)
-            {
-                return new ReportDto
-                {
-                    Message = "Geolocation service returned null",
-                    Status = false
-                };
-            }
-            if(!geolocation.Status)
-            {
-                return new ReportDto
-                {
-                    Message = geolocation.Message,
-                    Status = false
-                };
-            }
 
             var newReport = new Report
             {
@@ -101,7 +86,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 DateOccurred = DateTime.SpecifyKind(reportModel.DateOccurred, DateTimeKind.Utc),
                 CreatedAt = DateTime.UtcNow,
                 NameOfTheOffender = reportModel.NameOfTheOffender,
-                Location = geolocation.City,
+                Location = reportModel.Location,
                 HeightOfTheOffender = reportModel.HeightOfTheOffender,
                 DidItHappenInYourPresence = reportModel.DidItHappenInYourPresence,
                 ReportDescription = reportModel.ReportDescription,

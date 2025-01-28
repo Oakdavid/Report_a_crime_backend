@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.CodeAnalysis;
 using Newtonsoft.Json;
 using Report_A_Crime.Models.Dtos;
 using Report_A_Crime.Models.Entities;
@@ -67,7 +68,7 @@ namespace Report_A_Crime.Models.Services.Implementation
 
                 var locParts = ((string)ipInfoData.loc)?.Split(',');
 
-                if (locParts?.Length != 2 || !double.TryParse(locParts[0], out double lat) || !double.TryParse(locParts[1], out double lng))
+                if (locParts?.Length != 2 || !double.TryParse(locParts[0], out double latitude) || !double.TryParse(locParts[1], out double longitude))
                 {
                     return new GeolocationDto
                     {
@@ -76,9 +77,12 @@ namespace Report_A_Crime.Models.Services.Implementation
                     };
                 }
 
-                requestModel.Latitude = lat;
-                requestModel.Longitude = lng;
+                requestModel.Latitude = latitude;
+                requestModel.Longitude = longitude;
                 requestModel.City = ipInfoData.city;
+                requestModel.Country = ipInfoData.country;
+                requestModel.Region = ipInfoData.region;
+                requestModel.Location = $"{latitude},{longitude}";
             }
 
             if (requestModel.Latitude <= -90 || requestModel.Latitude >= 90 || requestModel.Longitude <= -180 || requestModel.Longitude >= 180)
@@ -106,6 +110,7 @@ namespace Report_A_Crime.Models.Services.Implementation
             {
                 Latitude = requestModel.Latitude.GetValueOrDefault(),
                 Longitude = requestModel.Longitude.GetValueOrDefault(),
+                Location = requestModel.Location,
                 City = requestModel.City,
                 IpAddress = clientIp,
                 ReportId = reportId
@@ -119,6 +124,8 @@ namespace Report_A_Crime.Models.Services.Implementation
                 Latitude = geolocation.Latitude,
                 Longitude = geolocation.Longitude,
                 City = geolocation.City,
+                Country = geolocation.Country,
+                Region = geolocation.Region,
                 ReportId = geolocation.ReportId,
                 IpAddress = geolocation.IpAddress,
                 Status = true,
@@ -146,6 +153,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 GeolocationId = g.GeolocationId,
                 Latitude = g.Latitude,
                 Longitude = g.Longitude,
+                Data = g.Location,
                 Message = "Geolocation retrieved successfully",
                 Status = true
             }).ToList();
@@ -153,9 +161,18 @@ namespace Report_A_Crime.Models.Services.Implementation
             return allGeolocation;
         }
 
-        public Task<IEnumerable<GeolocationDto>> GetGeolocations(Expression<Func<Geolocation, bool>> predicate)
+        public async Task<IEnumerable<GeolocationDto>> GetGeolocations(Expression<Func<Geolocation, bool>> predicate)
         {
-            throw new NotImplementedException();
+            var locations = await _geolocationRepository.GetAllByFilterAsync(predicate);
+            var geolocationDtos = locations.Select(g => new GeolocationDto
+            {
+                Latitude = g.Latitude,
+                Longitude = g.Longitude,
+                City = g.City,
+                Country = g.Country,
+                Region = g.Region,
+            }).ToList();
+            return geolocationDtos;
         }
 
         public Task<GeolocationDto> UpdateGeolocationAsync(GeolocationDto geolocation)
