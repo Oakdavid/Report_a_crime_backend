@@ -61,7 +61,7 @@ namespace Report_A_Crime.Controllers
         }
 
         [HttpDelete("DeleteCategory")]
-        public async Task<IActionResult> DeleteCategory([FromBody] Guid categoryId)
+        public async Task<IActionResult> DeleteCategory([FromQuery] Guid categoryId)
         {
 
            try
@@ -92,10 +92,10 @@ namespace Report_A_Crime.Controllers
            }
         }
 
-        [HttpPut("CategoryId")]
-        public async Task<IActionResult> UpdateCategory(Guid categoryId, [FromBody] CategoryUpdateModel model)
+        [HttpPut("UpdateCategory")]
+        public async Task<IActionResult> UpdateCategory([FromBody] CategoryUpdateModel model)
         {
-            if(categoryId == Guid.Empty)
+            if(model.CategoryId == Guid.Empty)
             {
                 return BadRequest("CategoryId is required");
             }
@@ -105,7 +105,7 @@ namespace Report_A_Crime.Controllers
                 return BadRequest("Category data is required");
             }
 
-            var update = await _categoryService.UpdateCategoryAsync(categoryId,model);
+            var update = await _categoryService.UpdateCategoryAsync(model.CategoryId,model);
 
             if(update == null)
             {
