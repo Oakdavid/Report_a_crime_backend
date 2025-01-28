@@ -13,5 +13,6 @@ namespace Report_A_Crime.Models.Repositories.Interface
         Task<IEnumerable<Geolocation>> GetByReportIdAsync(Guid reportId);
 
         Task<IEnumerable<Geolocation>> GetAllAsync();
+        Task<IEnumerable<Geolocation>> GetAllByFilterAsync(Expression<Func<Geolocation, bool>> expression);
     }
 }

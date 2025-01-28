@@ -64,8 +64,14 @@ namespace Report_A_Crime.Migrations
                     b.Property<double>("Latitude")
                         .HasColumnType("double precision");
 
+                    b.Property<string>("Location")
+                        .HasColumnType("text");
+
                     b.Property<double>("Longitude")
                         .HasColumnType("double precision");
+
+                    b.Property<string>("Region")
+                        .HasColumnType("text");
 
                     b.Property<Guid>("ReportId")
                         .HasColumnType("uuid");
@@ -165,7 +171,6 @@ namespace Report_A_Crime.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("RoleName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("RoleId");
