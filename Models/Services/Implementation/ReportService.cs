@@ -5,6 +5,7 @@ using Report_A_Crime.Models.Entities;
 using Report_A_Crime.Models.Repositories.Interface;
 using Report_A_Crime.Models.Repositories.Interphase;
 using Report_A_Crime.Models.Services.Interface;
+using System.Drawing;
 using System.Security.Claims;
 
 namespace Report_A_Crime.Models.Services.Implementation
@@ -21,7 +22,7 @@ namespace Report_A_Crime.Models.Services.Implementation
         private readonly IGeolocationService _geolocationService;
 
 
-        public ReportService(IReportRepository reportRepository, IUnitOfWork unitOfWork, IUserRepository userRepository, ICategoryRepository categoryRepository, IHttpContextAccessor contextAccessor, IWebHostEnvironment environment)
+        public ReportService(IReportRepository reportRepository, IUnitOfWork unitOfWork, IUserRepository userRepository, ICategoryRepository categoryRepository, IHttpContextAccessor contextAccessor, IWebHostEnvironment environment, IGeolocationRepository geolocationRepository)
         {
             _reportRepository = reportRepository;
             _unitOfWork = unitOfWork;
@@ -29,6 +30,7 @@ namespace Report_A_Crime.Models.Services.Implementation
            _categoryRepository = categoryRepository;
             _contextAccessor = contextAccessor;
             _environment = environment;
+            _geolocationRepository = geolocationRepository;
         }
 
         public async Task<ReportDto> CreateReportAsync(ReportRequestModel reportModel)
@@ -75,23 +77,6 @@ namespace Report_A_Crime.Models.Services.Implementation
                 };
             }
 
-            var geolocation = await _geolocationService.CreateGeolocationAsync(new GeolocationRequestModel(), Guid.NewGuid());
-            if(geolocation == null)
-            {
-                return new ReportDto
-                {
-                    Message = "Geolocation service returned null",
-                    Status = false
-                };
-            }
-            if(!geolocation.Status)
-            {
-                return new ReportDto
-                {
-                    Message = geolocation.Message,
-                    Status = false
-                };
-            }
 
             var newReport = new Report
             {
@@ -101,7 +86,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 DateOccurred = DateTime.SpecifyKind(reportModel.DateOccurred, DateTimeKind.Utc),
                 CreatedAt = DateTime.UtcNow,
                 NameOfTheOffender = reportModel.NameOfTheOffender,
-                Location = geolocation.City,
+                Location = reportModel.Location,
                 HeightOfTheOffender = reportModel.HeightOfTheOffender,
                 DidItHappenInYourPresence = reportModel.DidItHappenInYourPresence,
                 ReportDescription = reportModel.ReportDescription,
@@ -128,7 +113,8 @@ namespace Report_A_Crime.Models.Services.Implementation
                 ReportDescription = newReport.ReportDescription,
                 UploadEvidenceUrl = newReport.UploadEvidenceUrl,
                 ReportStatus = Enums.ReportStatus.UnderReview,
-                Category = newReport.Category,
+                CategoryID = newReport.Category.CategoryId,
+                CategoryName = newReport.Category.CategoryName,
                 User = newReport.User,
                 Message = "Report created successfully",
                 Status = true
@@ -154,7 +140,7 @@ namespace Report_A_Crime.Models.Services.Implementation
             };
         }
 
-        public async Task<IEnumerable<ReportDto>> GetAllReportsAsync() // all a specific report from a user
+        public async Task<ICollection<ReportDto>> GetAllReportsAsync() // all a specific report from a user
         {
             var getAllReports = await _reportRepository.GetAllReportsAsync();
             if(getAllReports.Any())
@@ -170,8 +156,8 @@ namespace Report_A_Crime.Models.Services.Implementation
                     ReportDescription = r.ReportDescription,
                     UploadEvidenceUrl = r.UploadEvidenceUrl,
                     ReportStatus = Enums.ReportStatus.UnderReview,
-                    Category = r.Category,
-                    User = r.User,
+                    CategoryID = r.Category.CategoryId,
+                    CategoryName = r.Category.CategoryName,
                     Message = "All report found",
                     Status = true,
                 }).ToList();
@@ -215,7 +201,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 ReportDescription = r.ReportDescription,
                 UploadEvidenceUrl = r.UploadEvidenceUrl,
                 ReportStatus = Enums.ReportStatus.UnderReview,
-                Category = r.Category,
+                CategoryName = r.Category.CategoryName,
                 User = r.User,
                 Message = "All report found",
                 Status = true,

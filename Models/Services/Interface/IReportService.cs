@@ -6,7 +6,7 @@ namespace Report_A_Crime.Models.Services.Interface
     public interface IReportService
     {
         public Task<ReportDto> CreateReportAsync(ReportRequestModel reportModel);
-        public Task<IEnumerable<ReportDto>> GetAllReportsAsync();
+        public Task<ICollection<ReportDto>> GetAllReportsAsync();
         public Task<ReportDto> GetReportByName(string reportName);
         public Task<ReportDto> UpdateReportAsync(UpdateReportModel updateModel);
         public Task<ReportDto> DeleteReportAsync(Guid reportId);
