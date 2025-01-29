@@ -32,11 +32,10 @@ namespace Report_A_Crime.Models.Dtos
 
     public class ReportRequestModel
     {
-        public Guid CategoryId { get; set; }
-        public DateTime DateOccurred { get; set; } = DateTime.UtcNow;
+        public string CategoryName { get; set; }
         public string? NameOfTheOffender { get; set; }
-        public string Location { get; set; } = default!;
-        public string? Address { get; set; }
+        public string? Location { get; set; }
+        //public string? Address { get; set; }
         public string? HeightOfTheOffender { get; set; }
         public bool DidItHappenInYourPresence { get; set; }
         public string ReportDescription { get; set; } = default!;
