@@ -45,5 +45,38 @@ namespace Report_A_Crime.Controllers
                 Message = report.Message
             });
         }
+
+        [HttpGet("GetAllReports")]
+        public async Task<IActionResult> GetAllReports()
+        {
+            var reports = await _reportService.GetAllReportsAsync();
+            if (reports.Any())
+            {
+                return Ok(new
+                {
+                    status = true,
+                    message = "success",
+                    data = reports.Select(p => new
+                    {
+                        p.ReportId,
+                        p.NameOfTheOffender,
+                        p.HeightOfTheOffender,
+                        p.User,
+                        p.DateOccurred,
+                        p.Address,
+                        p.Message,
+                        p.CreatedAt,
+                        p.Data,
+                        p.DateOccurred.Date,
+                        p.UploadEvidenceUrl,
+                        p.Location,
+                        p.DidItHappenInYourPresence,
+                        p.CategoryName,
+                    })
+                });
+            }
+
+            return NotFound(new { Message = "No reports found." });
+        }
     }
 }

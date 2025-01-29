@@ -22,7 +22,8 @@ namespace Report_A_Crime.Models.Dtos
         public string? UploadEvidenceUrl { get; set; }
         public ReportStatus ReportStatus { get; set; }
         //public Guid CategoryId { get; set; }
-        public Category? Category { get; set; }
+        public Guid CategoryID { get; set; }
+        public string CategoryName { get; set; }
         //public Guid? UserId { get; set; }
         public User? User { get; set; }
         ICollection<SharedWithUs> SharedWithUs { get; set; } = new HashSet<SharedWithUs>();
