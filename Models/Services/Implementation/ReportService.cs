@@ -35,10 +35,10 @@ namespace Report_A_Crime.Models.Services.Implementation
 
         public async Task<ReportDto> CreateReportAsync(ReportRequestModel reportModel)
         {
-            //var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
            // var userId = "6c86df0c-b880-412c-a7da-ad0682ecaddb";
-            var userId = "494e14be-e8e2-4c39-ada9-329f283d2e2e";
+           // var userId = "494e14be-e8e2-4c39-ada9-329f283d2e2e";
             if (userId == null)
             {
                 throw new UnauthorizedAccessException("User not authenticated");
@@ -120,7 +120,6 @@ namespace Report_A_Crime.Models.Services.Implementation
                 Message = "Report created successfully",
                 Status = true
             };
-
         }
 
         public async Task<ReportDto> DeleteReportAsync(Guid reportId)
