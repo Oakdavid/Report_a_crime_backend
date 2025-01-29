@@ -113,7 +113,8 @@ namespace Report_A_Crime.Models.Services.Implementation
                 ReportDescription = newReport.ReportDescription,
                 UploadEvidenceUrl = newReport.UploadEvidenceUrl,
                 ReportStatus = Enums.ReportStatus.UnderReview,
-                Category = newReport.Category,
+                CategoryID = newReport.Category.CategoryId,
+                CategoryName = newReport.Category.CategoryName,
                 User = newReport.User,
                 Message = "Report created successfully",
                 Status = true
@@ -139,7 +140,7 @@ namespace Report_A_Crime.Models.Services.Implementation
             };
         }
 
-        public async Task<IEnumerable<ReportDto>> GetAllReportsAsync() // all a specific report from a user
+        public async Task<ICollection<ReportDto>> GetAllReportsAsync() // all a specific report from a user
         {
             var getAllReports = await _reportRepository.GetAllReportsAsync();
             if(getAllReports.Any())
@@ -155,8 +156,8 @@ namespace Report_A_Crime.Models.Services.Implementation
                     ReportDescription = r.ReportDescription,
                     UploadEvidenceUrl = r.UploadEvidenceUrl,
                     ReportStatus = Enums.ReportStatus.UnderReview,
-                    Category = r.Category,
-                    User = r.User,
+                    CategoryID = r.Category.CategoryId,
+                    CategoryName = r.Category.CategoryName,
                     Message = "All report found",
                     Status = true,
                 }).ToList();
@@ -200,7 +201,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 ReportDescription = r.ReportDescription,
                 UploadEvidenceUrl = r.UploadEvidenceUrl,
                 ReportStatus = Enums.ReportStatus.UnderReview,
-                Category = r.Category,
+                CategoryName = r.Category.CategoryName,
                 User = r.User,
                 Message = "All report found",
                 Status = true,
