@@ -44,17 +44,17 @@ namespace Report_A_Crime.Models.Services.Implementation
                 throw new UnauthorizedAccessException("User not authenticated");
             }
 
-            if (reportModel.CategoryId == Guid.Empty)
-            {
-                return new ReportDto
-                {
-                    Message = "A valid category must be selected",
-                    Data = null,
-                    Status = false,
-                };
-            }
+            //if (reportModel.CategoryId == Guid.Empty)
+            //{
+            //    return new ReportDto
+            //    {
+            //        Message = "A valid category must be selected",
+            //        Data = null,
+            //        Status = false,
+            //    };
+            //}
 
-            var categoryExists = await _categoryRepository.CategoryExistAsync( c => c.CategoryId == reportModel.CategoryId );
+            var categoryExists = await _categoryRepository.CategoryExistAsync( c => c.CategoryName == reportModel.CategoryName );
             if(!categoryExists)
             {
                 return new ReportDto
@@ -65,7 +65,7 @@ namespace Report_A_Crime.Models.Services.Implementation
             }
 
 
-            var existingReport = await _reportRepository.FindSimilarReportAsync(reportModel.CategoryId, Guid.Parse(userId), reportModel.ReportDescription, DateTime.UtcNow.AddDays(-1));
+            var existingReport = await _reportRepository.FindSimilarReportAsync(reportModel.CategoryName, Guid.Parse(userId), reportModel.ReportDescription, DateTime.UtcNow.AddDays(-1));
 
             if(existingReport != null)
             {
@@ -77,13 +77,14 @@ namespace Report_A_Crime.Models.Services.Implementation
                 };
             }
 
+            var category = await _categoryRepository.GetCategoryAsync(a => a.CategoryName == reportModel.CategoryName);
 
             var newReport = new Report
             {
                 //ReportId = reportModel.ReportId,
                 UserId = Guid.Parse(userId),
-                CategoryId = reportModel.CategoryId,
-                DateOccurred = DateTime.SpecifyKind(reportModel.DateOccurred, DateTimeKind.Utc),
+                Category = category,
+                DateOccurred = DateTime.UtcNow,
                 CreatedAt = DateTime.UtcNow,
                 NameOfTheOffender = reportModel.NameOfTheOffender,
                 Location = reportModel.Location,
@@ -113,9 +114,9 @@ namespace Report_A_Crime.Models.Services.Implementation
                 ReportDescription = newReport.ReportDescription,
                 UploadEvidenceUrl = newReport.UploadEvidenceUrl,
                 ReportStatus = Enums.ReportStatus.UnderReview,
-                CategoryID = newReport.Category.CategoryId,
-                CategoryName = newReport.Category.CategoryName,
-                User = newReport.User,
+                CategoryID = newReport.CategoryId,
+               // CategoryName = newReport.Category.CategoryName,
+                //User = newReport.User.FirstName,
                 Message = "Report created successfully",
                 Status = true
             };

@@ -55,5 +55,18 @@ namespace Report_A_Crime.Controllers
                 });
             }
         }
+
+        [HttpGet("GetGeolocation")]
+        public async Task<IActionResult> GetGeolocation()
+        {
+            var geolocation = await _geolocationService.GetLocation();
+
+            if (geolocation == null)
+            {
+                return NotFound(new { Status = false, Message = "Geolocation not found." });
+            }
+
+            return Ok(new { Status = true, Data = geolocation });
+        }
     }
 }

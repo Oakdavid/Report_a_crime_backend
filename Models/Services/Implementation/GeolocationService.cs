@@ -179,5 +179,56 @@ namespace Report_A_Crime.Models.Services.Implementation
         {
             throw new NotImplementedException();
         }
+
+        public async Task<GeolocationDto> GetLocation()
+        {
+            var clientIp = _httpContextAccessor.HttpContext?.Connection?.RemoteIpAddress?.ToString();
+
+            var ipInfoResponse = await _httpClient.GetAsync($"https://ipinfo.io/json?token={_ipInfoToken}");
+            if (!ipInfoResponse.IsSuccessStatusCode)
+            {
+                return new GeolocationDto
+                {
+                    Message = "Unable to retrieve location information",
+                    Status = false,
+                };
+            }
+
+            var ipInfoContent = await ipInfoResponse.Content.ReadAsStringAsync();
+            var ipInfoData = JsonConvert.DeserializeObject<dynamic>(ipInfoContent);
+
+            if (ipInfoData == null || ipInfoData.city == null || ipInfoData.country == null)
+            {
+                return new GeolocationDto
+                {
+                    Message = "No geolocation data available for this request.",
+                    Status = false,
+                };
+            }
+
+            var locParts = ((string)ipInfoData.loc)?.Split(',');
+
+            if (locParts?.Length != 2 || !double.TryParse(locParts[0], out double latitude) || !double.TryParse(locParts[1], out double longitude))
+            {
+                return new GeolocationDto
+                {
+                    Message = "Invalid geolocation data from the external API.",
+                    Status = false,
+                };
+            }
+
+            return new GeolocationDto
+            {
+                Latitude = latitude,
+                Longitude = longitude,
+                City = ipInfoData.city,
+                Country = ipInfoData.country,
+                Region = ipInfoData.region,
+                IpAddress = clientIp,
+                Status = true,
+                Message = "Geolocation retrieved successfully.",
+            };
+        }
+
     }
 }
