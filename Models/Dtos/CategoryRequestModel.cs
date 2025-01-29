@@ -21,6 +21,7 @@ namespace Report_A_Crime.Models.Dtos
     public class CategoryUpdateModel
 
     {
+        public Guid CategoryId { get; set; } = default!;
         public string CategoryName { get; set; } = default!;
         public string? CategoryDescription { get; set; }
     }
