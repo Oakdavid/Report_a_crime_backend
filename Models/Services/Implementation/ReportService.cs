@@ -35,37 +35,7 @@ namespace Report_A_Crime.Models.Services.Implementation
 
         public async Task<ReportDto> CreateReportAsync(ReportRequestModel reportModel)
         {
-            var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-           // var userId = "6c86df0c-b880-412c-a7da-ad0682ecaddb";
-           // var userId = "494e14be-e8e2-4c39-ada9-329f283d2e2e";
-            if (userId == null)
-            {
-                throw new UnauthorizedAccessException("User not authenticated");
-            }
-
-            //if (reportModel.CategoryId == Guid.Empty)
-            //{
-            //    return new ReportDto
-            //    {
-            //        Message = "A valid category must be selected",
-            //        Data = null,
-            //        Status = false,
-            //    };
-            //}
-
-            var categoryExists = await _categoryRepository.CategoryExistAsync( c => c.CategoryName == reportModel.CategoryName );
-            if(!categoryExists)
-            {
-                return new ReportDto
-                {
-                    Message = "The specified category does not exist",
-                    Status = false,
-                };
-            }
-
-
-            var existingReport = await _reportRepository.FindSimilarReportAsync(reportModel.CategoryName, Guid.Parse(userId), reportModel.ReportDescription, DateTime.UtcNow.AddDays(-1));
+            var existingReport = await _reportRepository.FindSimilarReportAsync(reportModel.CategoryName, reportModel.ReportDescription, DateTime.UtcNow.AddDays(-1));
 
             if(existingReport != null)
             {
@@ -82,7 +52,6 @@ namespace Report_A_Crime.Models.Services.Implementation
             var newReport = new Report
             {
                 //ReportId = reportModel.ReportId,
-                UserId = Guid.Parse(userId),
                 Category = category,
                 DateOccurred = DateTime.UtcNow,
                 CreatedAt = DateTime.UtcNow,
