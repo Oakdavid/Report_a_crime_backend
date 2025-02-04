@@ -81,11 +81,36 @@
         "IsRequired": false
       },
       {
+        "Name": "Region",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Location",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Country",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "reportId",
         "Type": "System.Guid",
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Report_A_Crime.Controllers.ReportController",
+    "Method": "GetAllReports",
+    "RelativePath": "api/Report/GetAllReports",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -113,6 +138,11 @@
       },
       {
         "Name": "Location",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
         "Type": "System.String",
         "IsRequired": false
       },
