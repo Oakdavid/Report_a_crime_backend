@@ -138,14 +138,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 7,
+=======
+          "SelectedChildIndex": 6,
+>>>>>>> master
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 5,
               "Title": "CategoryRequestModel.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Models\\Dtos\\CategoryRequestModel.cs",
@@ -182,6 +191,29 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T19:18:40.88Z",
               "EditorCaption": ""
+=======
+              "DocumentIndex": 4,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Models\\Services\\Implementation\\CategoryService.cs",
+              "RelativeDocumentMoniker": "Models\\Services\\Implementation\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Models\\Services\\Implementation\\CategoryService.cs",
+              "RelativeToolTip": "Models\\Services\\Implementation\\CategoryService.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAIwFYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Models\\Repositories\\Implementation\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "Models\\Repositories\\Implementation\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Models\\Repositories\\Implementation\\CategoryRepository.cs",
+              "RelativeToolTip": "Models\\Repositories\\Implementation\\CategoryRepository.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAowEkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.88Z"
+>>>>>>> master
             },
             {
               "$type": "Document",
@@ -193,8 +225,12 @@
               "RelativeToolTip": "Models\\Repositories\\Implementation\\ReportRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-01-28T19:18:40.776Z",
               "EditorCaption": ""
+=======
+              "WhenOpened": "2025-01-28T19:18:40.776Z"
+>>>>>>> master
             },
             {
               "$type": "Document",
@@ -206,11 +242,42 @@
               "RelativeToolTip": "Models\\Services\\Interface\\ICategoryService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-01-28T19:18:40.811Z",
+=======
+              "WhenOpened": "2025-01-28T19:18:40.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReportRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Models\\Dtos\\ReportRequestModel.cs",
+              "RelativeDocumentMoniker": "Models\\Dtos\\ReportRequestModel.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Models\\Dtos\\ReportRequestModel.cs",
+              "RelativeToolTip": "Models\\Dtos\\ReportRequestModel.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAuwB4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.693Z",
+>>>>>>> master
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
+=======
+              "DocumentIndex": 5,
+              "Title": "CategoryRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Models\\Dtos\\CategoryRequestModel.cs",
+              "RelativeDocumentMoniker": "Models\\Dtos\\CategoryRequestModel.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Models\\Dtos\\CategoryRequestModel.cs",
+              "RelativeToolTip": "Models\\Dtos\\CategoryRequestModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T21:38:28.695Z"
+            },
+            {
+              "$type": "Document",
+>>>>>>> master
               "DocumentIndex": 1,
               "Title": "ReportController.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Controllers\\ReportController.cs",
@@ -219,6 +286,7 @@
               "RelativeToolTip": "Controllers\\ReportController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-01-28T19:18:40.433Z",
               "EditorCaption": ""
             },
@@ -234,6 +302,9 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T19:18:40.693Z",
               "EditorCaption": ""
+=======
+              "WhenOpened": "2025-01-28T19:18:40.433Z"
+>>>>>>> master
             },
             {
               "$type": "Document",
@@ -245,8 +316,12 @@
               "RelativeToolTip": "Controllers\\CategoryController.cs",
               "ViewState": "AgIAAEwAAAAAAAAAAAAIwFwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-01-28T19:18:40.583Z",
               "EditorCaption": ""
+=======
+              "WhenOpened": "2025-01-28T19:18:40.583Z"
+>>>>>>> master
             },
             {
               "$type": "Document",
@@ -258,8 +333,12 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAIwDEAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-01-28T19:18:40.391Z",
               "EditorCaption": ""
+=======
+              "WhenOpened": "2025-01-28T19:18:40.391Z"
+>>>>>>> master
             },
             {
               "$type": "Document",
@@ -284,6 +363,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-01-28T19:18:40.482Z"
+<<<<<<< HEAD
             },
             {
               "$type": "Document",
@@ -312,6 +392,35 @@
             },
             {
               "$type": "Document",
+=======
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-28T19:18:40.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAIwEAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.332Z"
+            },
+            {
+              "$type": "Document",
+>>>>>>> master
               "DocumentIndex": 10,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mr David\\Report_a_crime_backend\\Models\\Entities\\Category.cs",
@@ -356,8 +465,7 @@
               "RelativeToolTip": "Models\\Services\\Implementation\\ReportService.cs",
               "ViewState": "AQIAAJ4AAAAAAAAAAAAYwKYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.269Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.269Z"
             },
             {
               "$type": "Document",
@@ -393,8 +501,7 @@
               "RelativeToolTip": "Controllers\\GeolocationController.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAArwBIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.22Z"
             },
             {
               "$type": "Document",
@@ -442,8 +549,7 @@
               "RelativeToolTip": "Models\\Repositories\\Implementation\\Geolocation.cs",
               "ViewState": "AQIAABQAAAAAAAAAAADgvyMAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.529Z"
             },
             {
               "$type": "Document",

@@ -10,8 +10,6 @@ namespace Report_A_Crime.Models.Services.Interface
         Task<IEnumerable<GeolocationDto>> GetGeolocations(Expression<Func<Geolocation, bool>> predicate);
         Task<IEnumerable<GeolocationDto>> GetAllGeolocations();
         Task <GeolocationDto> UpdateGeolocationAsync(GeolocationDto geolocation);
-
-
-
+        Task<GeolocationDto> GetLocation();
     }
 }

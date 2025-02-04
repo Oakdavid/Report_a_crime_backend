@@ -57,10 +57,10 @@ namespace Report_A_Crime.Models.Repositories.Implementation
                 .ToListAsync();
         }
 
-        public async Task<Report> FindSimilarReportAsync(Guid categoryId, Guid userId, string reportDescription, DateTime timeFrame)
+        public async Task<Report> FindSimilarReportAsync(string categoryName, Guid userId, string reportDescription, DateTime timeFrame)
         {
             var getSimilarReportAsync =  await _dbContext.Reports
-                .Where(r => r.CategoryId == categoryId
+                .Where(r => r.Category.CategoryName == categoryName
                 && r.UserId == userId
                 && r.ReportDescription == reportDescription
                 && r.CreatedAt >= timeFrame)
