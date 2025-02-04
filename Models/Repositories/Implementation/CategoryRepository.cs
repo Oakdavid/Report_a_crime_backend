@@ -20,6 +20,7 @@ namespace Report_A_Crime.Models.Repositories.Implementation
         {
            
             var exist = await _dbContext.Categories.AnyAsync(predicate);
+            
             return exist;
         }
 

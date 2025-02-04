@@ -26,6 +26,20 @@ namespace Report_A_Crime.Models.Services.Implementation
             bool categoryExistAsync = await _categoryRepository.CategoryExistAsync(c => c.CategoryName == model.CategoryName);
             if(categoryExistAsync)
             {
+                var categoryWhichExisted = await _categoryRepository.GetCategoryAsync(a => a.CategoryName == model.CategoryName);
+                if(categoryWhichExisted != null && categoryWhichExisted.IsDeleted)
+                {
+                    categoryWhichExisted.CategoryDescription = model.CategoryDescription;
+                    categoryWhichExisted.IsDeleted = false;
+                    var newCategory = _categoryRepository.UpdateCategoryAsync(categoryWhichExisted);
+                    var changes =  await _unitOfWork.SaveChangesAsync();
+                    if(changes > 0)
+                        return new CategoryDto
+                        {
+                            Message = "Successfull",
+                            Status = true
+                        };
+                }
                 return new CategoryDto
                 {
                     Message = "Category with this name already Existed",

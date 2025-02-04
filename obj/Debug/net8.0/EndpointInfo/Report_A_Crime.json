@@ -132,6 +132,15 @@
                   },
                   "City": {
                     "type": "string"
+                  },
+                  "Region": {
+                    "type": "string"
+                  },
+                  "Location": {
+                    "type": "string"
+                  },
+                  "Country": {
+                    "type": "string"
                   }
                 }
               },
@@ -143,6 +152,15 @@
                   "style": "form"
                 },
                 "City": {
+                  "style": "form"
+                },
+                "Region": {
+                  "style": "form"
+                },
+                "Location": {
+                  "style": "form"
+                },
+                "Country": {
                   "style": "form"
                 }
               }
@@ -181,6 +199,9 @@
                   "Location": {
                     "type": "string"
                   },
+                  "Address": {
+                    "type": "string"
+                  },
                   "HeightOfTheOffender": {
                     "type": "string"
                   },
@@ -209,6 +230,9 @@
                 "Location": {
                   "style": "form"
                 },
+                "Address": {
+                  "style": "form"
+                },
                 "HeightOfTheOffender": {
                   "style": "form"
                 },
@@ -225,6 +249,18 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Report/GetAllReports": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
         "responses": {
           "200": {
             "description": "Success"
