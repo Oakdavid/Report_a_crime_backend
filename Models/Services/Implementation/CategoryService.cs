@@ -36,7 +36,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                     if(changes > 0)
                         return new CategoryDto
                         {
-                            Message = "Successfull",
+                            Message = "Successful",
                             Status = true
                         };
                 }
