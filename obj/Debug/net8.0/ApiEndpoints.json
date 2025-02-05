@@ -104,6 +104,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Report_A_Crime.Controllers.GeolocationController",
+    "Method": "GetGeolocation",
+    "RelativePath": "api/Geolocation/GetGeolocation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Report_A_Crime.Controllers.ReportController",
     "Method": "GetAllReports",
     "RelativePath": "api/Report/GetAllReports",
@@ -122,13 +132,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "CategoryId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "DateOccurred",
-        "Type": "System.DateTime",
+        "Name": "CategoryName",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -138,11 +143,6 @@
       },
       {
         "Name": "Location",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Address",
         "Type": "System.String",
         "IsRequired": false
       },
