@@ -70,6 +70,18 @@ namespace Report_A_Crime.Models.Repositories.Implementation
             return getSimilarReportAsync;
         }
 
+        public async Task<Report> FindSimilarReportAsync(string categoryName, string reportDescription, DateTime timeFrame)
+        {
+            var getSimilarReportAsync = await _dbContext.Reports
+                .Where(r => r.Category.CategoryName == categoryName
+                && r.ReportDescription == reportDescription
+                && r.CreatedAt >= timeFrame)
+                .Include(r => r.User)
+                .Include(r => r.Category)
+                .FirstOrDefaultAsync();
+            return getSimilarReportAsync;
+        }
+
         public async Task<IEnumerable<Report>> SearchReportsAsync(string searchTerm)
         {
             var searchReport = await _dbContext.Reports

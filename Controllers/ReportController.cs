@@ -10,10 +10,12 @@ namespace Report_A_Crime.Controllers
     public class ReportController : ControllerBase
     {
         private readonly IReportService _reportService;
+        private readonly ICategoryService _categoryService;
 
-        public ReportController(IReportService reportService)
+        public ReportController(IReportService reportService, ICategoryService categoryService)
         {
             _reportService = reportService;
+            _categoryService = categoryService;
         }
 
         [HttpPost("ReportCrime")]
