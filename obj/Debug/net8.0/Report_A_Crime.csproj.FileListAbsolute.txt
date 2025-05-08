@@ -97,7 +97,6 @@ C:\Users\HP\Documents\VS_Application\Report_A_Crime\obj\Debug\net8.0\staticwebas
 C:\Users\HP\Documents\VS_Application\Report_A_Crime\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Report_A_Crime.props
 C:\Users\HP\Documents\VS_Application\Report_A_Crime\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\HP\Documents\VS_Application\Report_A_Crime\obj\Debug\net8.0\scopedcss\bundle\Report_A_Crime.styles.css
-C:\Users\HP\Documents\VS_Application\Report_A_Crime\obj\Debug\net8.0\Report_A_Crime.csproj.CopyComplete
 C:\Users\HP\Documents\VS_Application\Report_A_Crime\obj\Debug\net8.0\Report_A_Crime.dll
 C:\Users\HP\Documents\VS_Application\Report_A_Crime\obj\Debug\net8.0\refint\Report_A_Crime.dll
 C:\Users\HP\Documents\VS_Application\Report_A_Crime\obj\Debug\net8.0\Report_A_Crime.pdb
@@ -494,3 +493,8 @@ C:\Users\oluwa\Documents\Programming\Software Journey\Projects\Mr David\Report_a
 C:\Users\oluwa\Documents\Programming\Software Journey\Projects\Mr David\Report_a_crime_backend\obj\Debug\net8.0\Report_A_Crime.pdb
 C:\Users\oluwa\Documents\Programming\Software Journey\Projects\Mr David\Report_a_crime_backend\obj\Debug\net8.0\Report_A_Crime.genruntimeconfig.cache
 C:\Users\oluwa\Documents\Programming\Software Journey\Projects\Mr David\Report_a_crime_backend\obj\Debug\net8.0\ref\Report_A_Crime.dll
+C:\Users\HP\Documents\VS_Application\Report_A_Crime\bin\Debug\net8.0\Report_A_Crime.staticwebassets.endpoints.json
+C:\Users\HP\Documents\VS_Application\Report_A_Crime\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\HP\Documents\VS_Application\Report_A_Crime\obj\Debug\net8.0\staticwebassets\msbuild.Report_A_Crime.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\HP\Documents\VS_Application\Report_A_Crime\obj\Debug\net8.0\Report_A.C40799E1.Up2Date
+C:\Users\HP\Documents\VS_Application\Report_A_Crime\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

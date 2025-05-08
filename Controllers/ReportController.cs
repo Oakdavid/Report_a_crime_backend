@@ -74,6 +74,7 @@ namespace Report_A_Crime.Controllers
                         p.Location,
                         p.DidItHappenInYourPresence,
                         p.CategoryName,
+                        p.ReportDescription
                     })
                 });
             }
