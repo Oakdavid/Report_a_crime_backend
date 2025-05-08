@@ -109,7 +109,7 @@ namespace Report_A_Crime.Models.Services.Implementation
             };
         }
 
-        public async Task<ICollection<ReportDto>> GetAllReportsAsync() // all a specific report from a user
+        public async Task<ICollection<ReportDto>> GetAllReportsAsync() // all specific report from a user
         {
             var getAllReports = await _reportRepository.GetAllReportsAsync();
             if(getAllReports.Any())

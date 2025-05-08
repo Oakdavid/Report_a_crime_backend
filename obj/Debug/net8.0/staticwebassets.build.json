@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "6EBIJmGjKVUEUaEf5jCSGnB6I1gEhLSuDgBspYST82g=",
+  "Hash": "RjzyZz8ho40EGRdYEmBk49iKQNFqhADE9mO9Oj8I+eo=",
   "Source": "Report_A_Crime",
   "BasePath": "_content/Report_A_Crime",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }
