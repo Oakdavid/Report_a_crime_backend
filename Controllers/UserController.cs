@@ -97,6 +97,17 @@ namespace Report_A_Crime.Controllers
             }
         }
 
+        [HttpPost("Logout")]
+        public IActionResult Logout()
+        {
+            return Ok(new
+            {
+                Status = true,
+                Message = "Logout successful",
+                StatusCode = 200
+            });
+        }
+
 
         [HttpGet("GetAllUsers")]
         public async Task<IActionResult> GetAllUsers()

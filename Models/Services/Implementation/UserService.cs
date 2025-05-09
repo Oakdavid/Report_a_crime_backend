@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using Report_A_Crime.Exception;
@@ -22,6 +25,7 @@ namespace Report_A_Crime.Models.Services.Implementation
         private readonly IUnitOfWork _unitOfWork;
         private readonly IRoleRepository _roleRepository;
         private readonly IConfiguration _configuration;
+       // private readonly IHttpContextAccessor _httpcontextAccessor;
 
         public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork, IRoleRepository roleRepository, IConfiguration configuration)
         {
@@ -29,6 +33,7 @@ namespace Report_A_Crime.Models.Services.Implementation
             _unitOfWork = unitOfWork;
             _roleRepository = roleRepository;
             _configuration = configuration;
+           // _httpcontextAccessor = httpcontextAccessor;
         }
         public async Task<UserDto> CreateUserAsync(UserRequestModel model)
         {
@@ -350,7 +355,5 @@ namespace Report_A_Crime.Models.Services.Implementation
         {
            return BCrypt.Net.BCrypt.Verify(currentPassword, storedHashedPassword);
         }
-
-
     }
 }
