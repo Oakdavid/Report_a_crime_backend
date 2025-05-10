@@ -145,21 +145,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Interface\\IUserService.cs",
-              "RelativeDocumentMoniker": "Models\\Services\\Interface\\IUserService.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Interface\\IUserService.cs",
-              "RelativeToolTip": "Models\\Services\\Interface\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T14:39:30.48Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -174,8 +161,7 @@
               "RelativeToolTip": "Models\\Services\\Implementation\\UserService.cs",
               "ViewState": "AgIAAOoAAAAAAAAAAAAowCQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.316Z"
             },
             {
               "$type": "Document",
@@ -187,8 +173,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAwwEsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.391Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.391Z"
             },
             {
               "$type": "Document",
@@ -198,10 +183,22 @@
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAuwGcAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAuwGgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T19:18:40.332Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Interface\\IUserService.cs",
+              "RelativeDocumentMoniker": "Models\\Services\\Interface\\IUserService.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Interface\\IUserService.cs",
+              "RelativeToolTip": "Models\\Services\\Interface\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T14:39:30.48Z"
             },
             {
               "$type": "Document",
@@ -213,8 +210,7 @@
               "RelativeToolTip": "Models\\Services\\Implementation\\ReportService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.269Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.269Z"
             },
             {
               "$type": "Document",
@@ -274,8 +270,7 @@
               "RelativeToolTip": "Models\\Dtos\\UserRequestModel.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAIwCQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T20:15:58.054Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T20:15:58.054Z"
             },
             {
               "$type": "Document",
@@ -300,8 +295,7 @@
               "RelativeToolTip": "Controllers\\ReportController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAiwDcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.433Z"
             },
             {
               "$type": "Document",

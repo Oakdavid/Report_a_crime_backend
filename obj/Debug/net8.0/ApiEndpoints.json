@@ -239,6 +239,16 @@
   },
   {
     "ContainingType": "Report_A_Crime.Controllers.UserController",
+    "Method": "Logout",
+    "RelativePath": "api/User/Logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Report_A_Crime.Controllers.UserController",
     "Method": "CreateUser",
     "RelativePath": "api/User/SignUp",
     "HttpMethod": "POST",

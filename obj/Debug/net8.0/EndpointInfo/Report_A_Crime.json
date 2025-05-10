@@ -349,6 +349,18 @@
         }
       }
     },
+    "/api/User/Logout": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/User/GetAllUsers": {
       "get": {
         "tags": [
