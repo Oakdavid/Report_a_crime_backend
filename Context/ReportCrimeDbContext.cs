@@ -47,13 +47,13 @@ namespace Report_A_Crime.Context
                 UserId = new Guid("419460cf-bda5-41bd-a342-eb30c795fda3"),
                 RoleId = new Guid("6b541cc9-b08b-47d3-b52f-3ca6aa06a1e6"),
                 UserName = "Admin",
-                HashSalt = "Admin",
+                Password = "$2a$11$OeBOGk5F96SCinvmzZWhIe9qc2A4bkHksn4OizlxC9r8J1TfhU4N2",
+                HashSalt = "",
                 PhoneNumber = "07011208687",
                 Email = "admin@yahoomail.com",
                 IsAnonymous = false,
                 KycStatus = true,
             });
-
         }
     }
 }

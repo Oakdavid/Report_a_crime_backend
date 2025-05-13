@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Report_A_Crime.Context;
@@ -11,9 +12,11 @@ using Report_A_Crime.Context;
 namespace Report_A_Crime.Migrations
 {
     [DbContext(typeof(ReportCrimeDbContext))]
-    partial class ReportCrimeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250513184909_UpdateAdminSeed")]
+    partial class UpdateAdminSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

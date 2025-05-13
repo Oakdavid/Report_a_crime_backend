@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Report_A_Crime.Context;
@@ -11,9 +12,11 @@ using Report_A_Crime.Context;
 namespace Report_A_Crime.Migrations
 {
     [DbContext(typeof(ReportCrimeDbContext))]
-    partial class ReportCrimeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250513173909_passwordUpdate")]
+    partial class passwordUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -267,7 +270,7 @@ namespace Report_A_Crime.Migrations
                             HashSalt = "",
                             IsAnonymous = false,
                             KycStatus = true,
-                            Password = "$2a$11$OeBOGk5F96SCinvmzZWhIe9qc2A4bkHksn4OizlxC9r8J1TfhU4N2",
+                            Password = "$2a$11$LTuYUgY7mFt/8OE...",
                             PhoneNumber = "07011208687",
                             RoleId = new Guid("6b541cc9-b08b-47d3-b52f-3ca6aa06a1e6"),
                             UserName = "Admin"

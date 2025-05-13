@@ -37,6 +37,8 @@ namespace Report_A_Crime.Models.Services.Implementation
         }
         public async Task<UserDto> CreateUserAsync(UserRequestModel model)
         {
+         //   var hashed = BCrypt.Net.BCrypt.HashPassword("Admin123");
+
 
             if (!IsValidEmail(model.Email))
             {
@@ -79,7 +81,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 userRole = new Role
                 {
                     RoleId = Guid.NewGuid(),
-                    RoleName = "user"
+                    RoleName = "User"
                 };
                 await _roleRepository.CreateAsync(userRole);
             }
@@ -350,6 +352,8 @@ namespace Report_A_Crime.Models.Services.Implementation
            var regex = new Regex(emailPattern);
             return regex.IsMatch(email);
         }
+
+        
 
         private bool VerifyPassword(string currentPassword, string storedHashedPassword)
         {

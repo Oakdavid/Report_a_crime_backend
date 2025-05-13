@@ -11,8 +11,36 @@
       "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\services\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\context\\reportcrimedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:context\\reportcrimedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\services\\implementation\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\services\\implementation\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\repositories\\implementation\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\repositories\\implementation\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\entities\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\entities\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\dtos\\categoryrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\dtos\\categoryrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\services\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,36 +78,16 @@
       "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\repositories\\interface\\ireportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\services\\implementation\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\services\\implementation\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\dtos\\reportrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\dtos\\reportrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\dtos\\categoryrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\dtos\\categoryrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\services\\interface\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\services\\interface\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\repositories\\implementation\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\repositories\\implementation\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\entities\\geolocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -96,10 +104,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\dtos\\geolocationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\dtos\\geolocationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\entities\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\entities\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\migrations\\20250110192706_geolocation modification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -145,7 +149,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -153,15 +157,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Interface\\IUserService.cs",
-              "RelativeDocumentMoniker": "Models\\Services\\Interface\\IUserService.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Interface\\IUserService.cs",
-              "RelativeToolTip": "Models\\Services\\Interface\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ReportCrimeDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Context\\ReportCrimeDbContext.cs",
+              "RelativeDocumentMoniker": "Context\\ReportCrimeDbContext.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Context\\ReportCrimeDbContext.cs",
+              "RelativeToolTip": "Context\\ReportCrimeDbContext.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwCgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T14:39:30.48Z"
+              "WhenOpened": "2025-05-13T15:32:06.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Report.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Entities\\Report.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Report.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Entities\\Report.cs",
+              "RelativeToolTip": "Models\\Entities\\Report.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAewBkAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.458Z"
             },
             {
               "$type": "Document",
@@ -171,21 +188,23 @@
               "RelativeDocumentMoniker": "Models\\Services\\Implementation\\UserService.cs",
               "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\UserService.cs",
               "RelativeToolTip": "Models\\Services\\Implementation\\UserService.cs",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAowCQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAYwOYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.316Z"
+              "WhenOpened": "2025-01-28T19:18:40.316Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwEsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.391Z"
+              "WhenOpened": "2025-01-28T19:18:40.391Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -195,7 +214,7 @@
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAuwGIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAnwFAAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T19:18:40.332Z",
               "EditorCaption": ""
@@ -203,150 +222,55 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ReportService.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\ReportService.cs",
-              "RelativeDocumentMoniker": "Models\\Services\\Implementation\\ReportService.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\ReportService.cs",
-              "RelativeToolTip": "Models\\Services\\Implementation\\ReportService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.269Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-28T19:18:40.482Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ReportRepository.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Implementation\\ReportRepository.cs",
-              "RelativeDocumentMoniker": "Models\\Repositories\\Implementation\\ReportRepository.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Implementation\\ReportRepository.cs",
-              "RelativeToolTip": "Models\\Repositories\\Implementation\\ReportRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.776Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IReportRepository.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Interface\\IReportRepository.cs",
-              "RelativeDocumentMoniker": "Models\\Repositories\\Interface\\IReportRepository.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Interface\\IReportRepository.cs",
-              "RelativeToolTip": "Models\\Repositories\\Interface\\IReportRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.842Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Microsoft.Common.CurrentVersion.targets",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AgIAAGYUAAAAAAAAAAASwPMUAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-03-26T18:18:44.37Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserRequestModel.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\UserRequestModel.cs",
-              "RelativeDocumentMoniker": "Models\\Dtos\\UserRequestModel.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\UserRequestModel.cs",
-              "RelativeToolTip": "Models\\Dtos\\UserRequestModel.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAIwCQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T20:15:58.054Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GeolocationController.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\GeolocationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\GeolocationController.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\GeolocationController.cs",
-              "RelativeToolTip": "Controllers\\GeolocationController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAmwA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.22Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ReportController.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\ReportController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReportController.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\ReportController.cs",
-              "RelativeToolTip": "Controllers\\ReportController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAiwDcAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.433Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\CategoryService.cs",
-              "RelativeDocumentMoniker": "Models\\Services\\Implementation\\CategoryService.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\CategoryService.cs",
-              "RelativeToolTip": "Models\\Services\\Implementation\\CategoryService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.713Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\appsettings.Development.json",
-              "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-28T19:18:40.365Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
               "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\CategoryController.cs",
               "RelativeToolTip": "Controllers\\CategoryController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAADwvy0AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAEwGcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.583Z"
+              "WhenOpened": "2025-01-28T19:18:40.583Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ReportRequestModel.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\ReportRequestModel.cs",
-              "RelativeDocumentMoniker": "Models\\Dtos\\ReportRequestModel.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\ReportRequestModel.cs",
-              "RelativeToolTip": "Models\\Dtos\\ReportRequestModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Implementation\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "Models\\Repositories\\Implementation\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Implementation\\CategoryRepository.cs",
+              "RelativeToolTip": "Models\\Repositories\\Implementation\\CategoryRepository.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAASwDoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.693Z"
+              "WhenOpened": "2025-01-28T19:18:40.88Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 5,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\CategoryService.cs",
+              "RelativeDocumentMoniker": "Models\\Services\\Implementation\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\CategoryService.cs",
+              "RelativeToolTip": "Models\\Services\\Implementation\\CategoryService.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAASwFEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Entities\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Category.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Entities\\Category.cs",
+              "RelativeToolTip": "Models\\Entities\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:39.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "CategoryRequestModel.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\CategoryRequestModel.cs",
               "RelativeDocumentMoniker": "Models\\Dtos\\CategoryRequestModel.cs",
@@ -358,7 +282,140 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Interface\\IUserService.cs",
+              "RelativeDocumentMoniker": "Models\\Services\\Interface\\IUserService.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Interface\\IUserService.cs",
+              "RelativeToolTip": "Models\\Services\\Interface\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T14:39:30.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ReportService.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\ReportService.cs",
+              "RelativeDocumentMoniker": "Models\\Services\\Implementation\\ReportService.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\ReportService.cs",
+              "RelativeToolTip": "Models\\Services\\Implementation\\ReportService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-28T19:18:40.482Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 17,
+              "Title": "ReportRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Implementation\\ReportRepository.cs",
+              "RelativeDocumentMoniker": "Models\\Repositories\\Implementation\\ReportRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Implementation\\ReportRepository.cs",
+              "RelativeToolTip": "Models\\Repositories\\Implementation\\ReportRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IReportRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Interface\\IReportRepository.cs",
+              "RelativeDocumentMoniker": "Models\\Repositories\\Interface\\IReportRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Interface\\IReportRepository.cs",
+              "RelativeToolTip": "Models\\Repositories\\Interface\\IReportRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAGYUAAAAAAAAAAASwPMUAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-03-26T18:18:44.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\UserRequestModel.cs",
+              "RelativeDocumentMoniker": "Models\\Dtos\\UserRequestModel.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\UserRequestModel.cs",
+              "RelativeToolTip": "Models\\Dtos\\UserRequestModel.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAIwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T20:15:58.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GeolocationController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\GeolocationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GeolocationController.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\GeolocationController.cs",
+              "RelativeToolTip": "Controllers\\GeolocationController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAmwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ReportController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\ReportController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReportController.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\ReportController.cs",
+              "RelativeToolTip": "Controllers\\ReportController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwDcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-28T19:18:40.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ReportRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\ReportRequestModel.cs",
+              "RelativeDocumentMoniker": "Models\\Dtos\\ReportRequestModel.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\ReportRequestModel.cs",
+              "RelativeToolTip": "Models\\Dtos\\ReportRequestModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.693Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "ICategoryService.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Interface\\ICategoryService.cs",
               "RelativeDocumentMoniker": "Models\\Services\\Interface\\ICategoryService.cs",
@@ -370,31 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CategoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Implementation\\CategoryRepository.cs",
-              "RelativeDocumentMoniker": "Models\\Repositories\\Implementation\\CategoryRepository.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Implementation\\CategoryRepository.cs",
-              "RelativeToolTip": "Models\\Repositories\\Implementation\\CategoryRepository.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAowEkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.88Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Entities\\Category.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Category.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Entities\\Category.cs",
-              "RelativeToolTip": "Models\\Entities\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:39.705Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "Geolocation.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Entities\\Geolocation.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Geolocation.cs",
@@ -406,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "20250128194830_report.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Migrations\\20250128194830_report.cs",
               "RelativeDocumentMoniker": "Migrations\\20250128194830_report.cs",
@@ -418,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "GeolocationService.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\GeolocationService.cs",
               "RelativeDocumentMoniker": "Models\\Services\\Implementation\\GeolocationService.cs",
@@ -430,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "GeolocationDto.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\GeolocationDto.cs",
               "RelativeDocumentMoniker": "Models\\Dtos\\GeolocationDto.cs",
@@ -442,19 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Report.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Entities\\Report.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Report.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Entities\\Report.cs",
-              "RelativeToolTip": "Models\\Entities\\Report.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAcwBUAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.458Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "20250110192706_Geolocation modification.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Migrations\\20250110192706_Geolocation modification.cs",
               "RelativeDocumentMoniker": "Migrations\\20250110192706_Geolocation modification.cs",
@@ -466,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Geolocation.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Implementation\\Geolocation.cs",
               "RelativeDocumentMoniker": "Models\\Repositories\\Implementation\\Geolocation.cs",
@@ -474,11 +495,12 @@
               "RelativeToolTip": "Models\\Repositories\\Implementation\\Geolocation.cs",
               "ViewState": "AgIAABQAAAAAAAAAAADgvyMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.529Z"
+              "WhenOpened": "2025-01-28T19:18:40.529Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -490,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "ReportStatus.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Enums\\ReportStatus.cs",
               "RelativeDocumentMoniker": "Models\\Enums\\ReportStatus.cs",
@@ -502,7 +524,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "20250104202352_geolocation updated.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Migrations\\20250104202352_geolocation updated.cs",
               "RelativeDocumentMoniker": "Migrations\\20250104202352_geolocation updated.cs",
@@ -514,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "IGeolocation.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Interface\\IGeolocation.cs",
               "RelativeDocumentMoniker": "Models\\Repositories\\Interface\\IGeolocation.cs",
@@ -526,7 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "RoleDto.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\RoleDto.cs",
               "RelativeDocumentMoniker": "Models\\Dtos\\RoleDto.cs",
@@ -538,7 +560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Interface\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "Models\\Repositories\\Interface\\ICategoryRepository.cs",
@@ -550,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "RoleRepository.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Implementation\\RoleRepository.cs",
               "RelativeDocumentMoniker": "Models\\Repositories\\Implementation\\RoleRepository.cs",
