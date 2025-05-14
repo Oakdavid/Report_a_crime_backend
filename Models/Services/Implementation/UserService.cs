@@ -222,6 +222,9 @@ namespace Report_A_Crime.Models.Services.Implementation
 
             return new UserDto
             {
+                RoleId = userLogin.RoleId,
+                UserId = userLogin.UserId,
+                RoleName = role.RoleName,
                 Email = userLogin.Email,
                 UserName = userLogin.UserName,
                 Token = token,
