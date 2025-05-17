@@ -84,7 +84,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 UploadEvidenceUrl = newReport.UploadEvidenceUrl,
                 ReportStatus = Enums.ReportStatus.UnderReview,
                 CategoryID = newReport.CategoryId,
-               // CategoryName = newReport.Category.CategoryName,
+                //CategoryName = newReport.Category.CategoryName,
                 //User = newReport.User.FirstName,
                 Message = "Report created successfully",
                 Status = true
@@ -154,7 +154,7 @@ namespace Report_A_Crime.Models.Services.Implementation
                 throw new UnauthorizedAccessException("User Id not found in claims");
             }
             var getReportsByUser = await _reportRepository.GetAllReportsAsync(r => r.UserId == new Guid(userId));
-            if (getReportsByUser != null || getReportsByUser.Any())
+            if (getReportsByUser == null || !getReportsByUser.Any())
             {
                 throw new ArgumentException("No reports found for this user");
             }

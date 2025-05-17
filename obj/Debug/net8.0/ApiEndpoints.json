@@ -125,6 +125,16 @@
   },
   {
     "ContainingType": "Report_A_Crime.Controllers.ReportController",
+    "Method": "GetAllReportsByUserAsync",
+    "RelativePath": "api/Report/GetAllReportsByUserAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Report_A_Crime.Controllers.ReportController",
     "Method": "ReportCrime",
     "RelativePath": "api/Report/ReportCrime",
     "HttpMethod": "POST",

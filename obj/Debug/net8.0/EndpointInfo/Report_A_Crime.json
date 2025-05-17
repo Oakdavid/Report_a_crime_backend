@@ -266,6 +266,18 @@
         }
       }
     },
+    "/api/Report/GetAllReportsByUserAsync": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/User/GetUser": {
       "get": {
         "tags": [

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Report_A_Crime.Models.Dtos;
 using Report_A_Crime.Models.Services.Interface;
@@ -78,7 +79,40 @@ namespace Report_A_Crime.Controllers
                     })
                 });
             }
+            return NotFound(new { Message = "No reports found." });
+        }
 
+        [HttpGet("GetAllReportsByUserAsync")]
+        [Authorize]
+        public async Task<IActionResult> GetAllReportsByUserAsync()
+        {
+            var reports = await _reportService.GetAllReportsByUserAsync();
+            if (reports.Any())
+            {
+                return Ok(new
+                {
+                    status = true,
+                    message = "success",
+                    data = reports.Select(p => new
+                    {
+                        p.ReportId,
+                        p.NameOfTheOffender,
+                        p.HeightOfTheOffender,
+                        p.User,
+                        p.DateOccurred,
+                        p.Address,
+                        p.Message,
+                        p.CreatedAt,
+                        p.Data,
+                        p.DateOccurred.Date,
+                        p.UploadEvidenceUrl,
+                        p.Location,
+                        p.DidItHappenInYourPresence,
+                        p.CategoryName,
+                        p.ReportDescription
+                    })
+                });
+            }
             return NotFound(new { Message = "No reports found." });
         }
     }
