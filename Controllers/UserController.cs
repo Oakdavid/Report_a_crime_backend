@@ -67,6 +67,7 @@ namespace Report_A_Crime.Controllers
             {
                 var userLogin = await _userService.LogInWithEmailAndPasswordOrNameAsync(login);
                 if (userLogin.Status)
+              //  if(userLogin.Data != null && userLogin.Data.Status)
                 {
                     return Ok(new
                     {

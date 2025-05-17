@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\services\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\services\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\repositories\\implementation\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\repositories\\implementation\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\dtos\\userrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\dtos\\userrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\services\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\services\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\repositories\\implementation\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\repositories\\implementation\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\dtos\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -149,7 +149,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -157,46 +157,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\UserService.cs",
               "RelativeDocumentMoniker": "Models\\Services\\Implementation\\UserService.cs",
               "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\UserService.cs",
               "RelativeToolTip": "Models\\Services\\Implementation\\UserService.cs",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAowKwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAqwOYAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.316Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "UserRequestModel.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\UserRequestModel.cs",
               "RelativeDocumentMoniker": "Models\\Dtos\\UserRequestModel.cs",
               "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\UserRequestModel.cs",
               "RelativeToolTip": "Models\\Dtos\\UserRequestModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T20:15:58.054Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T20:15:58.054Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAswGAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAIA4wFEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T19:18:40.332Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "RoleRepository.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Repositories\\Implementation\\RoleRepository.cs",
               "RelativeDocumentMoniker": "Models\\Repositories\\Implementation\\RoleRepository.cs",
@@ -204,8 +202,7 @@
               "RelativeToolTip": "Models\\Repositories\\Implementation\\RoleRepository.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAswCYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.863Z"
             },
             {
               "$type": "Document",
@@ -217,8 +214,7 @@
               "RelativeToolTip": "Models\\Dtos\\RoleDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.823Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.823Z"
             },
             {
               "$type": "Document",
@@ -398,8 +394,7 @@
               "RelativeToolTip": "Controllers\\GeolocationController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAmwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.22Z"
             },
             {
               "$type": "Document",
@@ -519,8 +514,7 @@
               "RelativeToolTip": "Models\\Repositories\\Implementation\\Geolocation.cs",
               "ViewState": "AgIAABQAAAAAAAAAAADgvyMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.529Z"
             },
             {
               "$type": "Document",
