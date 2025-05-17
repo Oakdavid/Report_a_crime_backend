@@ -9,7 +9,6 @@ namespace Report_A_Crime.Models.Dto
     {
         public Guid UserId { get; set; }
         public Guid RoleId { get; set; }
-       // public UserDto Data { get; set; }
         public string? RoleName { get; set; }
         public string? UserName { get; set; }
         public string? FirstName { get; set; }

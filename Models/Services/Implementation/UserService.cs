@@ -222,7 +222,6 @@ namespace Report_A_Crime.Models.Services.Implementation
 
             return new UserDto
             {
-
                 RoleId = userLogin.RoleId,
                 UserId = userLogin.UserId,
                 RoleName = role.RoleName,
@@ -231,20 +230,6 @@ namespace Report_A_Crime.Models.Services.Implementation
                 Token = token,
                 Message = "Login successful",
                 Status = true
-
-
-                //Data = new UserDto
-                //{
-
-                //    RoleId = userLogin.RoleId,
-                //    UserId = userLogin.UserId,
-                //    RoleName = role.RoleName,
-                //    Email = userLogin.Email,
-                //    UserName = userLogin.UserName,
-                //    Token = token,
-                //    Message = "Login successful",
-                //    Status = true
-                //},
             };
         }
 

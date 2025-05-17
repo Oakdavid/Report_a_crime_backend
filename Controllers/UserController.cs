@@ -74,7 +74,8 @@ namespace Report_A_Crime.Controllers
                         Status = true,
                         StatusCode = 200,
                         Message = userLogin.Message,
-                        Token = userLogin.Token
+                        Token = userLogin.Token,
+                        RoleName = userLogin.RoleName,
                     });
                 }
                 return StatusCode(500, new
