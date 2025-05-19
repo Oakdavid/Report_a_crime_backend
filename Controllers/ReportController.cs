@@ -64,18 +64,15 @@ namespace Report_A_Crime.Controllers
                         p.ReportId,
                         p.NameOfTheOffender,
                         p.HeightOfTheOffender,
-                        p.User,
                         p.DateOccurred,
-                        p.Address,
-                        p.Message,
                         p.CreatedAt,
-                        p.Data,
-                        p.DateOccurred.Date,
                         p.UploadEvidenceUrl,
                         p.Location,
                         p.DidItHappenInYourPresence,
                         p.CategoryName,
-                        p.ReportDescription
+                        p.ReportDescription,
+                        UserId = p.User?.UserId,
+                        UserName = p.User?.FirstName
                     })
                 });
             }
@@ -98,13 +95,7 @@ namespace Report_A_Crime.Controllers
                         p.ReportId,
                         p.NameOfTheOffender,
                         p.HeightOfTheOffender,
-                        p.User,
                         p.DateOccurred,
-                        p.Address,
-                        p.Message,
-                        p.CreatedAt,
-                        p.Data,
-                        p.DateOccurred.Date,
                         p.UploadEvidenceUrl,
                         p.Location,
                         p.DidItHappenInYourPresence,

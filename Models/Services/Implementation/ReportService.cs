@@ -5,6 +5,7 @@ using Report_A_Crime.Models.Entities;
 using Report_A_Crime.Models.Repositories.Interface;
 using Report_A_Crime.Models.Repositories.Interphase;
 using Report_A_Crime.Models.Services.Interface;
+using System;
 using System.Drawing;
 using System.Security.Claims;
 
@@ -35,9 +36,18 @@ namespace Report_A_Crime.Models.Services.Implementation
 
         public async Task<ReportDto> CreateReportAsync(ReportRequestModel reportModel)
         {
+            var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+
             var existingReport = await _reportRepository.FindSimilarReportAsync(reportModel.CategoryName, reportModel.ReportDescription, DateTime.UtcNow.AddDays(-1));
 
-            if(existingReport != null)
+            var claims = _contextAccessor.HttpContext.User.Claims;
+            foreach (var claim in claims)
+            {
+                Console.WriteLine($"{claim.Type}: {claim.Value}");
+            }
+
+            if (existingReport != null)
             {
                 return new ReportDto
                 {
@@ -64,7 +74,12 @@ namespace Report_A_Crime.Models.Services.Implementation
                 ReportStatus = Enums.ReportStatus.UnderReview,
             };
 
-            if (reportModel.UploadEvidence != null && reportModel.UploadEvidence.Length > 0) 
+            if (Guid.TryParse(userId, out var parsedUserId))
+            {
+                newReport.UserId = parsedUserId;
+            }
+
+            if (reportModel.UploadEvidence != null && reportModel.UploadEvidence.Length > 0)
             {
                 var uploadEvidenceUrl = await UploadFileAsync(reportModel.UploadEvidence);
                 newReport.UploadEvidenceUrl = uploadEvidenceUrl;
@@ -84,8 +99,6 @@ namespace Report_A_Crime.Models.Services.Implementation
                 UploadEvidenceUrl = newReport.UploadEvidenceUrl,
                 ReportStatus = Enums.ReportStatus.UnderReview,
                 CategoryID = newReport.CategoryId,
-                //CategoryName = newReport.Category.CategoryName,
-                //User = newReport.User.FirstName,
                 Message = "Report created successfully",
                 Status = true
             };
@@ -146,17 +159,58 @@ namespace Report_A_Crime.Models.Services.Implementation
             throw new NotImplementedException();
         }
 
+        //public async Task<IEnumerable<ReportDto>> GetAllReportsByUserAsync()
+        //{
+        //    var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        //    if(userId == null)
+        //    {
+        //        throw new UnauthorizedAccessException("User Id not found in claims");
+        //    }
+        //    var getReportsByUser = await _reportRepository.GetAllReportsAsync(r => r.UserId == new Guid(userId));
+        //    if (getReportsByUser == null || !getReportsByUser.Any())
+        //    {
+        //        throw new ArgumentException("No reports found for this user");
+        //    }
+
+        //    var reports = getReportsByUser.Select(r => new ReportDto
+        //    {
+        //        ReportId = r.ReportId,
+        //        DateOccurred = r.DateOccurred,
+        //        NameOfTheOffender = r.NameOfTheOffender,
+        //        Location = r.Location,
+        //        HeightOfTheOffender = r.HeightOfTheOffender,
+        //        DidItHappenInYourPresence = r.DidItHappenInYourPresence,
+        //        ReportDescription = r.ReportDescription,
+        //        UploadEvidenceUrl = r.UploadEvidenceUrl,
+        //        ReportStatus = Enums.ReportStatus.UnderReview,
+        //        CategoryName = r.Category.CategoryName,
+        //        User = r.User,
+        //        Message = "All report found",
+        //        Status = true,
+        //    }).ToList();
+
+        //    return reports;
+        //}
+
         public async Task<IEnumerable<ReportDto>> GetAllReportsByUserAsync()
         {
             var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if(userId == null)
+
+            if (userId == null)
             {
                 throw new UnauthorizedAccessException("User Id not found in claims");
             }
-            var getReportsByUser = await _reportRepository.GetAllReportsAsync(r => r.UserId == new Guid(userId));
+
+            if (!Guid.TryParse(userId, out var parsedUserId))
+            {
+                throw new UnauthorizedAccessException("Invalid user ID format");
+            }
+
+            var getReportsByUser = await _reportRepository.GetAllReportsAsync(r => r.UserId == parsedUserId);
+
             if (getReportsByUser == null || !getReportsByUser.Any())
             {
-                throw new ArgumentException("No reports found for this user");
+                return new List<ReportDto>();
             }
 
             var reports = getReportsByUser.Select(r => new ReportDto
@@ -169,15 +223,16 @@ namespace Report_A_Crime.Models.Services.Implementation
                 DidItHappenInYourPresence = r.DidItHappenInYourPresence,
                 ReportDescription = r.ReportDescription,
                 UploadEvidenceUrl = r.UploadEvidenceUrl,
-                ReportStatus = Enums.ReportStatus.UnderReview,
-                CategoryName = r.Category.CategoryName,
+                ReportStatus = r.ReportStatus,
+                CategoryName = r.Category?.CategoryName,
                 User = r.User,
-                Message = "All report found",
+                Message = "Report found",
                 Status = true,
             }).ToList();
 
             return reports;
         }
+
 
         public Task<IEnumerable<ReportDto>> SearchReportsAsync(string keyword, DateTime? fromDate, DateTime? toDate)
         {
