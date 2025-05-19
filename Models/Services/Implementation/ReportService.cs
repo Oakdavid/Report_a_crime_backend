@@ -38,7 +38,6 @@ namespace Report_A_Crime.Models.Services.Implementation
         {
             var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-
             var existingReport = await _reportRepository.FindSimilarReportAsync(reportModel.CategoryName, reportModel.ReportDescription, DateTime.UtcNow.AddDays(-1));
 
             var claims = _contextAccessor.HttpContext.User.Claims;
