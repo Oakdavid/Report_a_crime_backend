@@ -22,7 +22,7 @@ namespace Report_A_Crime.Models.Entities
         public Category? Category { get; set; }
         public Guid? UserId { get; set; }
         public User? User { get; set; }
-        ICollection<SharedWithUs> SharedWithUs { get; set; } =  new HashSet<SharedWithUs>();
-        ICollection<Geolocation> Geolocation { get; set; } =  new HashSet<Geolocation>();
+        public ICollection<SharedWithUs> SharedWithUs { get; set; } =  new HashSet<SharedWithUs>();
+        public ICollection<Geolocation> Geolocation { get; set; } =  new HashSet<Geolocation>();
     }
 }

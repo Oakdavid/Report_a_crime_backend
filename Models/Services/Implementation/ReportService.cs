@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Hosting;
 using Report_A_Crime.Models.Dtos;
 using Report_A_Crime.Models.Entities;
@@ -36,15 +37,13 @@ namespace Report_A_Crime.Models.Services.Implementation
 
         public async Task<ReportDto> CreateReportAsync(ReportRequestModel reportModel)
         {
-            var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var userId = _contextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-            var existingReport = await _reportRepository.FindSimilarReportAsync(reportModel.CategoryName, reportModel.ReportDescription, DateTime.UtcNow.AddDays(-1));
-
-            var claims = _contextAccessor.HttpContext.User.Claims;
-            foreach (var claim in claims)
-            {
-                Console.WriteLine($"{claim.Type}: {claim.Value}");
-            }
+            var existingReport = await _reportRepository.FindSimilarReportAsync(
+                reportModel.CategoryName,
+                reportModel.ReportDescription,
+                DateTime.UtcNow.AddDays(-1)
+            );
 
             if (existingReport != null)
             {
@@ -56,11 +55,12 @@ namespace Report_A_Crime.Models.Services.Implementation
                 };
             }
 
-            var category = await _categoryRepository.GetCategoryAsync(a => a.CategoryName == reportModel.CategoryName);
+            var category = await _categoryRepository.GetCategoryAsync(
+                a => a.CategoryName == reportModel.CategoryName
+            );
 
             var newReport = new Report
             {
-                //ReportId = reportModel.ReportId,
                 Category = category,
                 DateOccurred = DateTime.UtcNow,
                 CreatedAt = DateTime.UtcNow,
@@ -69,7 +69,6 @@ namespace Report_A_Crime.Models.Services.Implementation
                 HeightOfTheOffender = reportModel.HeightOfTheOffender,
                 DidItHappenInYourPresence = reportModel.DidItHappenInYourPresence,
                 ReportDescription = reportModel.ReportDescription,
-                //UploadEvidenceUrl = reportModel.UploadEvidenceUrl,
                 ReportStatus = Enums.ReportStatus.UnderReview,
             };
 
@@ -77,17 +76,23 @@ namespace Report_A_Crime.Models.Services.Implementation
             {
                 newReport.UserId = parsedUserId;
             }
+            else
+            {
+                newReport.UserId = null;
+            }
 
             if (reportModel.UploadEvidence != null && reportModel.UploadEvidence.Length > 0)
             {
                 var uploadEvidenceUrl = await UploadFileAsync(reportModel.UploadEvidence);
                 newReport.UploadEvidenceUrl = uploadEvidenceUrl;
             }
-            await _reportRepository.CreateReportAsync(newReport); 
+
+            await _reportRepository.CreateReportAsync(newReport);
             await _unitOfWork.SaveChangesAsync();
 
             return new ReportDto
             {
+                UserId = newReport.UserId,
                 ReportId = newReport.ReportId,
                 DateOccurred = newReport.DateOccurred,
                 NameOfTheOffender = newReport.NameOfTheOffender,
@@ -96,12 +101,13 @@ namespace Report_A_Crime.Models.Services.Implementation
                 DidItHappenInYourPresence = newReport.DidItHappenInYourPresence,
                 ReportDescription = newReport.ReportDescription,
                 UploadEvidenceUrl = newReport.UploadEvidenceUrl,
-                ReportStatus = Enums.ReportStatus.UnderReview,
+                ReportStatus = newReport.ReportStatus,
                 CategoryID = newReport.CategoryId,
                 Message = "Report created successfully",
                 Status = true
             };
         }
+
 
         public async Task<ReportDto> DeleteReportAsync(Guid reportId)
         {
@@ -121,7 +127,7 @@ namespace Report_A_Crime.Models.Services.Implementation
             };
         }
 
-        public async Task<ICollection<ReportDto>> GetAllReportsAsync() // all specific report from a user
+        public async Task<ICollection<ReportDto>> GetAllReportsAsync()
         {
             var getAllReports = await _reportRepository.GetAllReportsAsync();
             if(getAllReports.Any())
@@ -136,10 +142,10 @@ namespace Report_A_Crime.Models.Services.Implementation
                     DidItHappenInYourPresence = r.DidItHappenInYourPresence,
                     ReportDescription = r.ReportDescription,
                     UploadEvidenceUrl = r.UploadEvidenceUrl,
-                    ReportStatus = Enums.ReportStatus.UnderReview,
-                    CategoryID = r.Category.CategoryId,
-                    CategoryName = r.Category.CategoryName,
-                    Message = "All report found",
+                    ReportStatus = r.ReportStatus,
+                    CategoryName = r.Category?.CategoryName,
+                    User = r.User,
+                    Message = "Report found",
                     Status = true,
                 }).ToList();
                 return report;
@@ -157,40 +163,6 @@ namespace Report_A_Crime.Models.Services.Implementation
         {
             throw new NotImplementedException();
         }
-
-        //public async Task<IEnumerable<ReportDto>> GetAllReportsByUserAsync()
-        //{
-        //    var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        //    if(userId == null)
-        //    {
-        //        throw new UnauthorizedAccessException("User Id not found in claims");
-        //    }
-        //    var getReportsByUser = await _reportRepository.GetAllReportsAsync(r => r.UserId == new Guid(userId));
-        //    if (getReportsByUser == null || !getReportsByUser.Any())
-        //    {
-        //        throw new ArgumentException("No reports found for this user");
-        //    }
-
-        //    var reports = getReportsByUser.Select(r => new ReportDto
-        //    {
-        //        ReportId = r.ReportId,
-        //        DateOccurred = r.DateOccurred,
-        //        NameOfTheOffender = r.NameOfTheOffender,
-        //        Location = r.Location,
-        //        HeightOfTheOffender = r.HeightOfTheOffender,
-        //        DidItHappenInYourPresence = r.DidItHappenInYourPresence,
-        //        ReportDescription = r.ReportDescription,
-        //        UploadEvidenceUrl = r.UploadEvidenceUrl,
-        //        ReportStatus = Enums.ReportStatus.UnderReview,
-        //        CategoryName = r.Category.CategoryName,
-        //        User = r.User,
-        //        Message = "All report found",
-        //        Status = true,
-        //    }).ToList();
-
-        //    return reports;
-        //}
-
         public async Task<IEnumerable<ReportDto>> GetAllReportsByUserAsync()
         {
             var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;

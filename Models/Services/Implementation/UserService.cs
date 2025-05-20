@@ -37,9 +37,6 @@ namespace Report_A_Crime.Models.Services.Implementation
         }
         public async Task<UserDto> CreateUserAsync(UserRequestModel model)
         {
-         //   var hashed = BCrypt.Net.BCrypt.HashPassword("Admin123");
-
-
             if (!IsValidEmail(model.Email))
             {
                 return new UserDto
