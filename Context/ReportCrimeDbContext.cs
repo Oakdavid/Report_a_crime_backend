@@ -51,6 +51,7 @@ namespace Report_A_Crime.Context
                 HashSalt = "",
                 PhoneNumber = "07011208687",
                 Email = "admin@yahoomail.com",
+                IsPrimaryAdmin = true,
                 IsAnonymous = false,
                 KycStatus = true,
             });
