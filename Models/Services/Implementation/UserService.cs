@@ -371,6 +371,40 @@ namespace Report_A_Crime.Models.Services.Implementation
                     Status = false
                 };
             }
+           
+            var userToPromote = await _userRepository.GetUserAsync(u => u.UserId == userIdToPromote);
+            if (userToPromote == null)
+            {
+                return new UserDto
+                {
+                    Message = "User not found",
+                    Status = false
+                };
+            }
+
+            var adminRole = await _roleRepository.GetRoleAsync(r => r.RoleName == "Admin");
+            if(adminRole == null)
+            {
+                return new UserDto
+                {
+                    Message = "Admin role not found",
+                    Status = false
+                };
+            }
+            userToPromote.RoleId = adminRole.RoleId;
+            await _userRepository.Update(userToPromote);
+            await _unitOfWork.SaveChangesAsync();
+            return new UserDto
+            {
+                UserId = userToPromote.UserId,
+                RoleId = userToPromote.RoleId,
+                UserName = userToPromote.UserName,
+                Email = userToPromote.Email,
+                PhoneNumber = userToPromote.PhoneNumber,
+                IsAnonymous = userToPromote.IsAnonymous,
+                Message = "User promoted to Admin successfully",
+                Status = true
+            };
         }
     }
 }
