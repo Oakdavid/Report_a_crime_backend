@@ -148,5 +148,39 @@ namespace Report_A_Crime.Controllers
                 });
             }
         }
+
+        [HttpPut("promote/{userIdToPromote}")]
+        public async Task<IActionResult> PromoteUserToAdminAsync(Guid userIdToPromote)
+        {
+            var currentUserId = User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value;
+            if (currentUserId == null)
+            {
+                return Unauthorized(new
+                {
+                    Status = false,
+                    Message = "Unauthorized",
+                    StatusCode = 401
+                });
+            }
+            var promoteUser = await _userService.PromoteUserToAdminAsync(Guid.Parse(currentUserId), userIdToPromote);
+            if (promoteUser != null)
+            {
+                return Ok(new
+                {
+                    Status = true,
+                    Message = promoteUser.Message,
+                    StatusCode = 200
+                });
+            }
+            else
+            {
+                return BadRequest(new
+                {
+                    Status = false,
+                    Message = "Failed to promote user",
+                    StatusCode = 400
+                });
+            }
+        }
     }
 }

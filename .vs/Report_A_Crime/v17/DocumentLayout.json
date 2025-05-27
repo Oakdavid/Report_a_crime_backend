@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\services\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:models\\services\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -41,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B49B310-C11D-4BF3-BD6C-7562C1882CC4}|Report_A_Crime.csproj|c:\\users\\hp\\documents\\vs_application\\report_a_crime\\models\\dtos\\userrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -161,7 +161,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -169,19 +169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20250522192138_IsPrimaryAdminToUser.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Migrations\\20250522192138_IsPrimaryAdminToUser.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250522192138_IsPrimaryAdminToUser.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Migrations\\20250522192138_IsPrimaryAdminToUser.cs",
-              "RelativeToolTip": "Migrations\\20250522192138_IsPrimaryAdminToUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T19:21:39.318Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Entities\\User.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\User.cs",
@@ -193,20 +181,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\UserService.cs",
               "RelativeDocumentMoniker": "Models\\Services\\Implementation\\UserService.cs",
               "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\UserService.cs",
               "RelativeToolTip": "Models\\Services\\Implementation\\UserService.cs",
-              "ViewState": "AgIAAGIBAAAAAAAAAAAqwHMBAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAGIBAAAAAAAAAAAqwHABAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T19:18:40.316Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Interface\\IUserService.cs",
               "RelativeDocumentMoniker": "Models\\Services\\Interface\\IUserService.cs",
@@ -230,7 +218,32 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAwwKAAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:18:40.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "20250522192138_IsPrimaryAdminToUser.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Migrations\\20250522192138_IsPrimaryAdminToUser.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250522192138_IsPrimaryAdminToUser.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Migrations\\20250522192138_IsPrimaryAdminToUser.cs",
+              "RelativeToolTip": "Migrations\\20250522192138_IsPrimaryAdminToUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T19:21:39.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ReportCrimeDbContext.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Context\\ReportCrimeDbContext.cs",
               "RelativeDocumentMoniker": "Context\\ReportCrimeDbContext.cs",
@@ -242,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ReportService.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Services\\Implementation\\ReportService.cs",
               "RelativeDocumentMoniker": "Models\\Services\\Implementation\\ReportService.cs",
@@ -254,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ReportController.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\ReportController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReportController.cs",
@@ -266,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ReportRequestModel.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Dtos\\ReportRequestModel.cs",
               "RelativeDocumentMoniker": "Models\\Dtos\\ReportRequestModel.cs",
@@ -278,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Report.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Models\\Entities\\Report.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Report.cs",
@@ -290,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
@@ -299,18 +312,6 @@
               "ViewState": "AgIAAFQAAAAAAAAAAAAEwGcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T19:18:40.583Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAQwFEAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.332Z"
             },
             {
               "$type": "Document",
@@ -466,8 +467,7 @@
               "RelativeToolTip": "Controllers\\GeolocationController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAmwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.22Z"
             },
             {
               "$type": "Document",
@@ -563,8 +563,7 @@
               "RelativeToolTip": "Models\\Repositories\\Implementation\\Geolocation.cs",
               "ViewState": "AgIAABQAAAAAAAAAAADgvyMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.529Z"
             },
             {
               "$type": "Document",
