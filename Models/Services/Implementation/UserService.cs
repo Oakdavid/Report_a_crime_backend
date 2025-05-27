@@ -359,5 +359,18 @@ namespace Report_A_Crime.Models.Services.Implementation
         {
            return BCrypt.Net.BCrypt.Verify(currentPassword, storedHashedPassword);
         }
+
+        public async Task<UserDto> PromoteUserToAdminAsync(Guid currentUserId, Guid userIdToPromote)
+        {
+            var currentUser = await _userRepository.GetUserAsync(u => u.UserId == currentUserId);
+            if(currentUser == null ||!currentUser.IsPrimaryAdmin)
+            {
+                return new UserDto
+                {
+                    Message = "You do not have permission to promote users",
+                    Status = false
+                };
+            }
+        }
     }
 }

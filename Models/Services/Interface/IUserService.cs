@@ -12,5 +12,6 @@ namespace Report_A_Crime.Models.Services.Interface
         public Task<UserDto> GetUserAsync(string email);
         public Task<IEnumerable<UserDto>> GetAllUsersAsync();
         Task<UserDto> ChangePasswordAsync(string email, string currentPassword, string newPassword);
+        Task<UserDto> PromoteUserToAdminAsync(Guid currentUserId, Guid userIdToPromote);
     }
 }
