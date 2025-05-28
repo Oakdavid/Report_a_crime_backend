@@ -41,9 +41,9 @@ The platform's core features are fully functional. Additional implementations an
 - **Advanced filtering and data analytics**
 - **Integration with external reporting authorities**
 
-## 🙋‍♂️ Author
+## Developer
 
-Created by **OakDavid**, a passionate software developer dedicated to solving real-world problems through thoughtful, impactful solutions.
+Developed by **OakDavid**, a passionate software developer dedicated to solving real-world problems through thoughtful, impactful solutions.
 
 ---
 
