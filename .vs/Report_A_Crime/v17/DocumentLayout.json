@@ -189,8 +189,7 @@
               "RelativeToolTip": "Models\\Services\\Implementation\\UserService.cs",
               "ViewState": "AgIAAGIBAAAAAAAAAAAqwHABAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:18:40.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:18:40.316Z"
             },
             {
               "$type": "Document",
@@ -224,7 +223,7 @@
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\HP\\Documents\\VS_Application\\Report_A_Crime\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAwwKAAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAJ4AAAAAAAAAAADwv7AAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T19:18:40.332Z",
               "EditorCaption": ""
