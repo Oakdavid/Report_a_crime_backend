@@ -1,50 +1,45 @@
-# Report a Crime
+# Crime Reporting System API
 
-**Report a Crime** is a platform designed to empower individuals, especially the voiceless and vulnerable, to report crimes either **anonymously** or **openly**.
-It aims to bridge the gap between victims or witnesses and the appropriate authorities, helping create safer communities through technology.
-
-## Purpose
-In many communities today, people often stay silent due to fear, lack of trust in authorities, or feeling powerless.
-This platform exists to change that, giving anyone the ability to speak up and report wrongdoing without fear of retaliation.
+Backend system built with ASP.NET Core and PostgreSQL for reporting and managing crime cases.
 
 ## Key Features
 
-- **Anonymous or Public Reporting**  
-  Users can submit reports anonymously or with their identity attached.
+* JWT Authentication and Role-Based Authorization (Admin/User)
+* Submit reports anonymously or with identity
+* User dashboard to manage reports
+* Admin dashboard for managing and tracking cases
+* Crime data visualization (charts and maps)
+* Real-time updates using SignalR
 
-- **User Dashboard**  
-  Registered users have access to a personal dashboard to view and manage their reports.
+## Tech Stack
 
-- **Admin Dashboard**  
-  Admins can view, manage, and track all submitted crime reports efficiently.
+* C# (.NET Core Web API)
+* PostgreSQL
+* Entity Framework Core
+* SignalR
+* Google Charts / Maps API
+* HTML, CSS, JavaScript
 
-- **Crime Data Visualization (Bar Chart)**  
-  Displays bar charts showing crime distribution to help identify trends and hotspots.
+## Overview
 
-## Technologies Used
+**Report a Crime** is a platform designed to enable individuals to report crimes anonymously or openly, helping bridge the gap between citizens and authorities to improve community safety.
 
-- **C# (.NET Core)** – Backend API
-- **HTML, CSS, JavaScript** – Frontend
-- **SignalR** – Real-time messaging
-- **Google Charts / Maps API** – Crime data visualization
-- **IPinfo API** – Geolocation from IP address
-- **PostgreSQL** – Relational database for storing reports and user data
+## Purpose
+
+Many individuals hesitate to report crimes due to fear or lack of trust. This platform provides a safe and accessible way to report incidents and increase transparency.
 
 ## Deployment
 
-This project is currently **not hosted** online. It runs locally and was developed primarily for **learning and demonstration purposes**.
-Hosting may be considered in the future as the project evolves, because no one knows tomorrow.
+This project is currently not hosted online and runs locally. Future deployment is planned.
 
 ## Current Status
-The platform's core features are fully functional. Additional implementations and improvements are ongoing and will continue at a steady pace. Planned enhancements include:
-- **Real-time notifications using SignalR**
-- **Advanced filtering and data analytics**
-- **Integration with external reporting authorities**
 
-## Developer
+Core features are fully functional. Planned improvements include:
 
-Developed by **OakDavid**, a passionate software developer dedicated to solving real-world problems through thoughtful, impactful solutions.
+* Real-time notifications
+* Advanced filtering and analytics
+* Integration with external reporting systems
 
----
+## Note
 
-**Note:** This is a self-initiated project developed as part of my growth as a full-stack developer. It demonstrates my ability to design and build real-world solutions with a focus on social impact and technical depth.
+This project demonstrates backend system design, API development, authentication, and data handling.
